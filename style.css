@@ -1,0 +1,59 @@
+body {
+  background: #9d50bb; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #6e48aa,
+    #9d50bb
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #6e48aa,
+    #9d50bb
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+canvas {
+  min-height: 280px;
+  border: 1.5px black solid;
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 350px) {
+  canvas {
+    min-height: 136px;
+    max-width: 136px;
+  }
+}
+
+/* Media Query for low resolution  Tablets, Ipads */
+@media (min-width: 361px) and (max-width: 425px) {
+  canvas {
+    min-height: 163px;
+    max-width: 163px;
+  }
+}
+
+@media (min-width: 425px) and (max-width: 767px) {
+  canvas {
+    max-width: 188px;
+  }
+}
+/* Media Query for Tablets Ipads portrait mode */
+@media (min-width: 768px) and (max-width: 1023px) {
+  canvas {
+    max-width: 336px !important;
+  }
+}
+
+/* Media Query for Laptops and Desktops */
+@media (min-width: 1024px) and (max-width: 1280px) {
+  canvas {
+    max-width: 456px;
+  }
+}
+
+/* Media Query for Large screens */
+@media (min-width: 1440px) and (max-width: 2560px) {
+  canvas {
+    min-width: 636px;
+  }
+}
