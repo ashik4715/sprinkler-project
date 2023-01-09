@@ -287,13 +287,8 @@
               <p>Fire Size</p>
             </div>
             <div class="col-sm-6">
-              <input
-                type="search"
-                name=""
-                id=""
-                placeholder="Activation time"
-              />
-              <input type="search" name="" id="" placeholder="Fire Size" />
+              <p class="activationTime-result result-style">sample 1</p>
+              <p class="fireSize-result result-style">sample 2</p>
             </div>
           </div>
           <!-- Results -->
@@ -304,7 +299,29 @@
             The correlations for jet temperatures and velocities were developed
             from data by Alpert
           </p>
-          <canvas class="canvas"></canvas>
+          <canvas class="pb-5"></canvas>
+          <form action="">
+            <div class="row pt-5">
+              <div class="col">
+                <button class="btn btn-calculate" type="submit">
+                  Calculate
+                </button>
+              </div>
+              <div class="col">
+                <button class="btn btn-clear" type="button">Clear Data</button>
+              </div>
+              <div class="col">
+                <button class="btn btn-print" type="button">
+                  Print Results
+                </button>
+              </div>
+              <div class="col">
+                <button class="btn btn-danger" type="button">
+                  Exit Program
+                </button>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
     </div>
