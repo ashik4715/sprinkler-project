@@ -79,6 +79,7 @@
                 id=""
                 placeholder="Height (meter)"
                 onwheel="return false;"
+                required
               />
             </div>
             <div class="col-sm"></div>
@@ -95,6 +96,7 @@
                 id=""
                 placeholder="Radial Distance (m)"
                 onwheel="return false;"
+                required
               />
             </div>
             <div class="col-sm"></div>
@@ -110,10 +112,12 @@
               <input
                 class="text-center"
                 type="number"
-                name=""
-                id=""
-                placeholder="Enter &alpha;"
+                step="0.001"
+                name="alpha"
+                id="alpha"
+                placeholder="&alpha; required"
                 onwheel="return false;"
+                required
               />
               <p class="text-center">kW/s&sup2;</p>
             </div>
@@ -372,6 +376,7 @@
       $("input[type='radio']").click(function () {
         var radioValue = $("input[name='flexRadioDefault']:checked").val();
         if (radioValue) {
+          document.getElementById("alpha").value = radioValue;
           alert("Radio Value is = " + radioValue);
         }
       });
