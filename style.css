@@ -173,7 +173,7 @@ canvas {
 }
 
 input[type="range"] {
-  max-width: 300px;
+  width: 180px;
   margin: 10px 0;
 }
 
@@ -184,8 +184,8 @@ input[type="range"]:focus {
 input[type="range"] + label {
   background-color: black;
   position: absolute;
-  top: -25px;
-  left: 50px;
+  top: -30px;
+  left: 70px;
   width: 40px;
   padding: 5px 0;
   text-align: center;

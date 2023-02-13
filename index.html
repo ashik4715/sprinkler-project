@@ -56,6 +56,14 @@
               <div class="range-container">
                 <input type="range" id="range" min="0" max="1000" />
                 <label for="range">500</label>
+                <input
+                  class="text-center"
+                  type="number"
+                  name="slider_input"
+                  id="slider_input1"
+                  placeholder="Slide Or Input"
+                  onwheel="return false;"
+                />
               </div>
             </div>
           </div>
@@ -351,6 +359,7 @@
       label.style.left = `${left}px`;
 
       label.innerHTML = value;
+      document.getElementById("slider_input1").value = value;
     });
 
     const scale = (num, in_min, in_max, out_min, out_max) => {
