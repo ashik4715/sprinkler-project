@@ -185,7 +185,7 @@ input[type="range"] + label {
   background-color: black;
   position: absolute;
   top: -25px;
-  left: 110px;
+  left: 50px;
   width: 40px;
   padding: 5px 0;
   text-align: center;
