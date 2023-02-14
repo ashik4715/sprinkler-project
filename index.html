@@ -382,10 +382,12 @@
     };
 
     $(document).ready(function () {
-      $("input[type='radio']").click(function () {
+      $("input[type='radio']").click(function (e) {
         var radioValue = $("input[name='flexRadioDefault']:checked").val();
         var radioAmbient = $("input[name='tAmbientRadio']:checked").val();
         var radioAct = $("input[name='tActRadio']:checked").val();
+        e.preventDefault();
+
         if (radioValue) {
           document.getElementById("alpha").value = radioValue;
         }
