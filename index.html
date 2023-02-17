@@ -63,7 +63,7 @@
             </div>
 
             <!-- Height Row -->
-            <div class="row pb-2">
+            <div class="row py-2">
               <div class="col-sm">Height</div>
               <div class="col-sm">
                 <input
@@ -831,7 +831,7 @@
       var tAmbientVal = $("input[name='tAmbient']:checked").val();
       var tActVal = $("input[name='tAct']:checked").val();
       var alphaVal = $("input[name='alpha']:checked").val();
-      var time = $("input[name='time']:checked").val();
+      var timCounter = 0;
       var vGas, tGas, activationTime, fireSize, Q, tau, deltaT;
 
       $(".btn-clear").click(function () {
@@ -839,7 +839,7 @@
       });
       $(".btn-calculate").submit(function () {
         // vGas-result, tGas-result, activationTime-result, fireSize-result
-        Q = alphaVal * Math.pow(time, 2);
+        Q = alphaVal * Math.pow(timCounter, 2);
         if (R / H > 0.15) {
           vGas = 0.2 * (Math.pow(Q, 1 / 3) * Math.pow(H, 1 / 2));
         }
