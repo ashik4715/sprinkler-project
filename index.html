@@ -46,8 +46,8 @@
                 <input
                   class="text-center"
                   type="number"
-                  name=""
-                  id=""
+                  name="RTI"
+                  id="RTI"
                   placeholder="Enter RTI"
                   onwheel="return false;"
                   required
@@ -61,7 +61,7 @@
                   <input
                     class="text-center"
                     type="number"
-                    name="slider_input"
+                    name="slider_input1"
                     id="slider_input1"
                     placeholder="Slide Or Input"
                     onwheel="return false;"
@@ -78,9 +78,9 @@
                 <input
                   class="text-center"
                   type="number"
-                  name=""
-                  id=""
-                  placeholder="Height (meter)"
+                  name="H"
+                  id="H"
+                  placeholder="Height (H)"
                   onwheel="return false;"
                   required
                 />
@@ -95,9 +95,9 @@
                 <input
                   class="text-center"
                   type="number"
-                  name=""
-                  id=""
-                  placeholder="Radial Distance (m)"
+                  name="R"
+                  id="R"
+                  placeholder="Radial Distance (R)"
                   onwheel="return false;"
                   required
                 />
@@ -306,8 +306,10 @@
                 <p>Fire Size</p>
               </div>
               <div class="col-sm-6">
-                <p class="activationTime-result result-style">sample 1</p>
-                <p class="fireSize-result result-style">sample 2</p>
+                <p class="activationTime-result result-style">activation</p>
+                <p class="fireSize-result result-style">fireSize</p>
+                <p class="vGas-result result-style">vGas</p>
+                <p class="tGas-result result-style">tGas</p>
               </div>
             </div>
 
@@ -777,8 +779,23 @@
   <!-- Excel Generate Javascript Below -->
   <script>
     $(document).ready(function () {
+      var R = $("input[name='R']:checked").val();
+      var H = $("input[name='H']:checked").val();
+      var tAmbientVal = $("input[name='tAmbient']:checked").val();
+      var tActVal = $("input[name='tAct']:checked").val();
+      var alphaVal = $("input[name='alpha']:checked").val();
+      var time;
+      var vGas, tGas, activationTime, fireSize, Q, tau, deltaT;
+
       $(".btn-clear").click(function () {
         $("form")[0].reset();
+      });
+      $(".btn-calculate").submit(function () {
+        // vGas-result, tGas-result, activationTime-result, fireSize-result
+        Q = alphaVal * Math.pow(time, 2);
+        if (R / H > 0.15) {
+          vGas = 0.2 * (Math.pow(Q, 1 / 3) * Math.pow(H, 1 / 2));
+        }
       });
     });
   </script>
