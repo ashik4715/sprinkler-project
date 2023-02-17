@@ -29,7 +29,7 @@
 
       <div class="row text-light">
         <div class="col">
-          <form action="">
+          <form action="" class="form-detection">
             <h4 class="text-info pb-2">Detection / Sprinkler Response Time</h4>
             <p class="text-light fst-italic py-3">
               Put desired value in the box or chose the pre-determined value by
@@ -386,7 +386,7 @@
         var radioValue = $("input[name='flexRadioDefault']:checked").val();
         var radioAmbient = $("input[name='tAmbientRadio']:checked").val();
         var radioAct = $("input[name='tActRadio']:checked").val();
-        // e.preventDefault();
+        e.preventDefault();
 
         if (radioValue) {
           document.getElementById("alpha").value = radioValue;
@@ -775,6 +775,12 @@
   <!-- End Chart Javascript Below -->
 
   <!-- Excel Generate Javascript Below -->
-  <script></script>
+  <script>
+    $(document).ready(function () {
+      $(".btn-clear").click(function () {
+        $("form")[0].reset();
+      });
+    });
+  </script>
   <!-- Excel Generate Javascript Below -->
 </html>
