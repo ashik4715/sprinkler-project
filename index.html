@@ -29,295 +29,289 @@
 
       <div class="row text-light">
         <div class="col">
-          <h4 class="text-info pb-2">Detection / Sprinkler Response Time</h4>
-          <p class="text-light fst-italic py-3">
-            Put desired value in the box or chose the pre-determined value by
-            ticking one of the suggested options
-          </p>
+          <form action="">
+            <h4 class="text-info pb-2">Detection / Sprinkler Response Time</h4>
+            <p class="text-light fst-italic py-3">
+              Put desired value in the box or chose the pre-determined value by
+              ticking one of the suggested options
+            </p>
 
-          <!-- RTI Row -->
-          <div class="row pb-3">
-            <div class="col-sm">
-              RTI <br />
-              Response Time Index
-            </div>
-            <div class="col-sm">
-              <input
-                class="text-center"
-                type="number"
-                name=""
-                id=""
-                placeholder="Enter RTI"
-                onwheel="return false;"
-              />
-              <p class="text-center">&radic;m&lowast;s</p>
-            </div>
-            <div class="col-sm">
-              <div class="range-container">
-                <input type="range" id="range" min="0" max="1000" />
-                <label for="range">500</label>
+            <!-- RTI Row -->
+            <div class="row pb-3">
+              <div class="col-sm">
+                RTI <br />
+                Response Time Index
+              </div>
+              <div class="col-sm">
                 <input
                   class="text-center"
                   type="number"
-                  name="slider_input"
-                  id="slider_input1"
-                  placeholder="Slide Or Input"
+                  name=""
+                  id=""
+                  placeholder="Enter RTI"
                   onwheel="return false;"
+                  required
                 />
+                <p class="text-center">&radic;m&lowast;s</p>
+              </div>
+              <div class="col-sm">
+                <div class="range-container">
+                  <input type="range" id="range" min="0" max="1000" />
+                  <label for="range">500</label>
+                  <input
+                    class="text-center"
+                    type="number"
+                    name="slider_input"
+                    id="slider_input1"
+                    placeholder="Slide Or Input"
+                    onwheel="return false;"
+                    required
+                  />
+                </div>
               </div>
             </div>
-          </div>
 
-          <!-- Height Row -->
-          <div class="row pb-3">
-            <div class="col-sm">Height</div>
-            <div class="col-sm">
-              <input
-                class="text-center"
-                type="number"
-                name=""
-                id=""
-                placeholder="Height (meter)"
-                onwheel="return false;"
-                required
-              />
+            <!-- Height Row -->
+            <div class="row pb-3">
+              <div class="col-sm">Height</div>
+              <div class="col-sm">
+                <input
+                  class="text-center"
+                  type="number"
+                  name=""
+                  id=""
+                  placeholder="Height (meter)"
+                  onwheel="return false;"
+                  required
+                />
+              </div>
+              <div class="col-sm"></div>
             </div>
-            <div class="col-sm"></div>
-          </div>
 
-          <!-- Radial Distance Row -->
-          <div class="row pb-3">
-            <div class="col-sm">Radial Distance</div>
-            <div class="col-sm">
-              <input
-                class="text-center"
-                type="number"
-                name=""
-                id=""
-                placeholder="Radial Distance (m)"
-                onwheel="return false;"
-                required
-              />
+            <!-- Radial Distance Row -->
+            <div class="row pb-3">
+              <div class="col-sm">Radial Distance</div>
+              <div class="col-sm">
+                <input
+                  class="text-center"
+                  type="number"
+                  name=""
+                  id=""
+                  placeholder="Radial Distance (m)"
+                  onwheel="return false;"
+                  required
+                />
+              </div>
+              <div class="col-sm"></div>
             </div>
-            <div class="col-sm"></div>
-          </div>
 
-          <!-- Aplha Row -->
-          <div class="row pb-3">
-            <div class="col-sm">
-              &alpha; <br />
-              Based on T sqaure Fire Q = &alpha;t&sup2;
+            <!-- Aplha Row -->
+            <div class="row pb-3">
+              <div class="col-sm">
+                &alpha; <br />
+                Based on T sqaure Fire Q = &alpha;t&sup2;
+              </div>
+              <div class="col-sm">
+                <input
+                  class="text-center"
+                  type="number"
+                  step="0.001"
+                  name="alpha"
+                  id="alpha"
+                  placeholder="&alpha; required"
+                  onwheel="return false;"
+                  required
+                />
+                <p class="text-center">kW/s&sup2;</p>
+              </div>
+              <div class="col-sm">
+                <ul style="list-style-type: none">
+                  <li>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="flexRadioDefault"
+                        id="flexRadioDefault1"
+                        value="0.003"
+                      />
+                      <label class="form-check-label" for="flexRadioDefault1">
+                        Slow
+                      </label>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="flexRadioDefault"
+                        id="flexRadioDefault2"
+                        value="0.012"
+                      />
+                      <label class="form-check-label" for="flexRadioDefault2">
+                        Medium
+                      </label>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="flexRadioDefault"
+                        id="flexRadioDefault3"
+                        value="0.047"
+                      />
+                      <label class="form-check-label" for="flexRadioDefault3">
+                        Fast
+                      </label>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="flexRadioDefault"
+                        id="flexRadioDefault4"
+                        value="0.188"
+                      />
+                      <label class="form-check-label" for="flexRadioDefault4">
+                        Ultrafast
+                      </label>
+                    </div>
+                  </li>
+                </ul>
+              </div>
             </div>
-            <div class="col-sm">
-              <input
-                class="text-center"
-                type="number"
-                step="0.001"
-                name="alpha"
-                id="alpha"
-                placeholder="&alpha; required"
-                onwheel="return false;"
-                required
-              />
-              <p class="text-center">kW/s&sup2;</p>
-            </div>
-            <div class="col-sm">
-              <ul style="list-style-type: none">
-                <li>
-                  <div class="form-check">
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      name="flexRadioDefault"
-                      id="flexRadioDefault1"
-                      value="0.003"
-                    />
-                    <label class="form-check-label" for="flexRadioDefault1">
-                      Slow
-                    </label>
-                  </div>
-                </li>
-                <li>
-                  <div class="form-check">
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      name="flexRadioDefault"
-                      id="flexRadioDefault2"
-                      value="0.012"
-                    />
-                    <label class="form-check-label" for="flexRadioDefault2">
-                      Medium
-                    </label>
-                  </div>
-                </li>
-                <li>
-                  <div class="form-check">
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      name="flexRadioDefault"
-                      id="flexRadioDefault3"
-                      value="0.047"
-                    />
-                    <label class="form-check-label" for="flexRadioDefault3">
-                      Fast
-                    </label>
-                  </div>
-                </li>
-                <li>
-                  <div class="form-check">
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      name="flexRadioDefault"
-                      id="flexRadioDefault4"
-                      value="0.188"
-                    />
-                    <label class="form-check-label" for="flexRadioDefault4">
-                      Ultrafast
-                    </label>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
 
-          <!-- Activation Temperature row -->
-          <div class="row pb-3">
-            <div class="col-sm">Activation Temperature</div>
-            <div class="col-sm">
-              <input
-                class="text-center"
-                type="number"
-                name="tAmbient"
-                id="tAmbient"
-                step="0.1"
-                placeholder="Temperature required"
-                onwheel="return false;"
-                required
-              />
-              <p class="text-center">&#8451;</p>
+            <!-- Activation Temperature row -->
+            <div class="row pb-3">
+              <div class="col-sm">Activation Temperature</div>
+              <div class="col-sm">
+                <input
+                  class="text-center"
+                  type="number"
+                  name="tAmbient"
+                  id="tAmbient"
+                  step="0.1"
+                  placeholder="Temperature required"
+                  onwheel="return false;"
+                  required
+                />
+                <p class="text-center">&#8451;</p>
+              </div>
+              <div class="col-sm">
+                <ul style="list-style-type: none">
+                  <li>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="tAmbientRadio"
+                        id="flexRadioDefault5"
+                        value="68"
+                      />
+                      <label class="form-check-label" for="flexRadioDefault5">
+                        68&#8451;
+                      </label>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="tAmbientRadio"
+                        id="flexRadioDefault6"
+                        value="79"
+                      />
+                      <label class="form-check-label" for="flexRadioDefault7">
+                        79&#8451;
+                      </label>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="tAmbientRadio"
+                        id="flexRadioDefault8"
+                        value="93"
+                      />
+                      <label class="form-check-label" for="flexRadioDefault9">
+                        93&#8451;
+                      </label>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="tAmbientRadio"
+                        id="flexRadioDefault10"
+                        value="141"
+                      />
+                      <label class="form-check-label" for="flexRadioDefault10">
+                        141&#8451;
+                      </label>
+                    </div>
+                  </li>
+                </ul>
+              </div>
             </div>
-            <div class="col-sm">
-              <ul style="list-style-type: none">
-                <li>
-                  <div class="form-check">
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      name="tAmbientRadio"
-                      id="flexRadioDefault5"
-                      value="68"
-                    />
-                    <label class="form-check-label" for="flexRadioDefault5">
-                      68&#8451;
-                    </label>
-                  </div>
-                </li>
-                <li>
-                  <div class="form-check">
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      name="tAmbientRadio"
-                      id="flexRadioDefault6"
-                      value="79"
-                    />
-                    <label class="form-check-label" for="flexRadioDefault7">
-                      79&#8451;
-                    </label>
-                  </div>
-                </li>
-                <li>
-                  <div class="form-check">
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      name="tAmbientRadio"
-                      id="flexRadioDefault8"
-                      value="93"
-                    />
-                    <label class="form-check-label" for="flexRadioDefault9">
-                      93&#8451;
-                    </label>
-                  </div>
-                </li>
-                <li>
-                  <div class="form-check">
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      name="tAmbientRadio"
-                      id="flexRadioDefault10"
-                      value="141"
-                    />
-                    <label class="form-check-label" for="flexRadioDefault10">
-                      141&#8451;
-                    </label>
-                  </div>
-                </li>
-              </ul>
+            <!-- Ambience Temperature row -->
+            <div class="row pb-3">
+              <div class="col-sm">Ambience Temperature</div>
+              <div class="col-sm">
+                <input
+                  class="text-center"
+                  type="number"
+                  name="tAct"
+                  id="tAct"
+                  step="0.1"
+                  placeholder="Ambience required"
+                  onwheel="return false;"
+                  required
+                />
+                <p class="text-center">&#8451;</p>
+              </div>
+              <div class="col-sm">
+                <ul style="list-style-type: none">
+                  <li>
+                    <div class="form-check">
+                      <input
+                        class="form-check-input"
+                        type="radio"
+                        name="tActRadio"
+                        id="flexRadioDefault11"
+                        value="200"
+                      />
+                      <label class="form-check-label" for="flexRadioDefault11">
+                        200&#8451;
+                      </label>
+                    </div>
+                  </li>
+                </ul>
+              </div>
             </div>
-          </div>
-          <!-- Ambience Temperature row -->
-          <div class="row pb-3">
-            <div class="col-sm">Ambience Temperature</div>
-            <div class="col-sm">
-              <input
-                class="text-center"
-                type="number"
-                name="tAct"
-                id="tAct"
-                step="0.1"
-                placeholder="Ambience required"
-                onwheel="return false;"
-                required
-              />
-              <p class="text-center">&#8451;</p>
-            </div>
-            <div class="col-sm">
-              <ul style="list-style-type: none">
-                <li>
-                  <div class="form-check">
-                    <input
-                      class="form-check-input"
-                      type="radio"
-                      name="tActRadio"
-                      id="flexRadioDefault11"
-                      value="200"
-                    />
-                    <label class="form-check-label" for="flexRadioDefault11">
-                      200&#8451;
-                    </label>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <!-- end Ambience Temperature row -->
+            <!-- end Ambience Temperature row -->
 
-          <div class="row py-2">
-            <div class="col-sm-6">
-              <p>Activation time</p>
-              <p>Fire Size</p>
+            <div class="row py-2">
+              <div class="col-sm-6">
+                <p>Activation time</p>
+                <p>Fire Size</p>
+              </div>
+              <div class="col-sm-6">
+                <p class="activationTime-result result-style">sample 1</p>
+                <p class="fireSize-result result-style">sample 2</p>
+              </div>
             </div>
-            <div class="col-sm-6">
-              <p class="activationTime-result result-style">sample 1</p>
-              <p class="fireSize-result result-style">sample 2</p>
-            </div>
-          </div>
-          <!-- Results -->
-        </div>
-        <div class="col">
-          <img class="img-fluid" src="img/equations.png" alt="equations" />
-          <p class="text-light fst-italic py-3">
-            The correlations for jet temperatures and velocities were developed
-            from data by Alpert
-          </p>
-          <canvas class="pb-5"></canvas>
-          <form action="">
-            <div class="row pt-5">
+
+            <div class="row py-2 pt-4">
               <div class="col">
                 <button class="btn btn-calculate" type="submit">
                   Calculate
@@ -331,13 +325,18 @@
                   Print Results
                 </button>
               </div>
-              <div class="col">
-                <button class="btn btn-danger" type="button">
-                  Exit Program
-                </button>
-              </div>
             </div>
           </form>
+        </div>
+
+        <!-- Results -->
+        <div class="col">
+          <img class="img-fluid" src="img/equations.png" alt="equations" />
+          <p class="text-light fst-italic py-3">
+            The correlations for jet temperatures and velocities were developed
+            from data by Alpert
+          </p>
+          <canvas class="pb-5"></canvas>
         </div>
       </div>
     </div>
@@ -387,7 +386,7 @@
         var radioValue = $("input[name='flexRadioDefault']:checked").val();
         var radioAmbient = $("input[name='tAmbientRadio']:checked").val();
         var radioAct = $("input[name='tActRadio']:checked").val();
-        e.preventDefault();
+        // e.preventDefault();
 
         if (radioValue) {
           document.getElementById("alpha").value = radioValue;
