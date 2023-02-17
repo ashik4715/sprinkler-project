@@ -47,8 +47,8 @@
                   class="text-center"
                   type="number"
                   name="RTI"
-                  id="RTI"
-                  placeholder="Enter RTI"
+                  id="slider_input1"
+                  placeholder="Slide Or Input RTI"
                   onwheel="return false;"
                   required
                 />
@@ -58,55 +58,56 @@
                 <div class="range-container">
                   <input type="range" id="range" min="0" max="1000" />
                   <label for="range">500</label>
-                  <input
-                    class="text-center"
-                    type="number"
-                    name="slider_input1"
-                    id="slider_input1"
-                    placeholder="Slide Or Input"
-                    onwheel="return false;"
-                    required
-                  />
                 </div>
               </div>
             </div>
 
             <!-- Height Row -->
-            <div class="row pb-3">
+            <div class="row pb-2">
               <div class="col-sm">Height</div>
               <div class="col-sm">
                 <input
                   class="text-center"
                   type="number"
                   name="H"
-                  id="H"
-                  placeholder="Height (H)"
+                  id="slider_input2"
+                  placeholder="Slide Or Input Height"
                   onwheel="return false;"
                   required
                 />
               </div>
-              <div class="col-sm"></div>
+              <div class="col-sm">
+                <div class="range-container">
+                  <input type="range" id="range2" min="0" max="1000" />
+                  <label for="range2">500</label>
+                </div>
+              </div>
             </div>
 
             <!-- Radial Distance Row -->
-            <div class="row pb-3">
+            <div class="row py-3">
               <div class="col-sm">Radial Distance</div>
               <div class="col-sm">
                 <input
                   class="text-center"
                   type="number"
                   name="R"
-                  id="R"
-                  placeholder="Radial Distance (R)"
+                  id="slider_input3"
+                  placeholder="Slide Radial Distance"
                   onwheel="return false;"
                   required
                 />
               </div>
-              <div class="col-sm"></div>
+              <div class="col-sm">
+                <div class="range-container">
+                  <input type="range" id="range3" min="0" max="1000" />
+                  <label for="range3">500</label>
+                </div>
+              </div>
             </div>
 
             <!-- Aplha Row -->
-            <div class="row pb-3">
+            <div class="row py-2">
               <div class="col-sm">
                 &alpha; <br />
                 Based on T sqaure Fire Q = &alpha;t&sup2;
@@ -187,7 +188,7 @@
             </div>
 
             <!-- Activation Temperature row -->
-            <div class="row pb-3">
+            <div class="row py-2">
               <div class="col-sm">Activation Temperature</div>
               <div class="col-sm">
                 <input
@@ -264,7 +265,7 @@
               </div>
             </div>
             <!-- Ambience Temperature row -->
-            <div class="row pb-3">
+            <div class="row py-2">
               <div class="col-sm">Ambience Temperature</div>
               <div class="col-sm">
                 <input
@@ -353,6 +354,8 @@
   <!-- inputs and radio button Javascript Below -->
   <script>
     const range = document.getElementById("range");
+    const range2 = document.getElementById("range2");
+    const range3 = document.getElementById("range3");
 
     range.addEventListener("input", (e) => {
       const value = +e.target.value;
@@ -375,6 +378,50 @@
 
       label.innerHTML = value;
       document.getElementById("slider_input1").value = value;
+    });
+    range2.addEventListener("input", (e) => {
+      const value = +e.target.value;
+      const label = e.target.nextElementSibling;
+
+      const range_width = getComputedStyle(e.target).getPropertyValue("width");
+      const label_width = getComputedStyle(label).getPropertyValue("width");
+
+      const num_width = +range_width.substring(0, range_width.length - 2);
+      const num_label_width = +label_width.substring(0, label_width.length - 2);
+
+      const max = +e.target.max;
+      const min = +e.target.min;
+
+      const left =
+        value * (num_width / max) -
+        num_label_width / 2 +
+        scale(value, min, max, 10, -10);
+      label.style.left = `${left}px`;
+
+      label.innerHTML = value;
+      document.getElementById("slider_input2").value = value;
+    });
+    range3.addEventListener("input", (e) => {
+      const value = +e.target.value;
+      const label = e.target.nextElementSibling;
+
+      const range_width = getComputedStyle(e.target).getPropertyValue("width");
+      const label_width = getComputedStyle(label).getPropertyValue("width");
+
+      const num_width = +range_width.substring(0, range_width.length - 2);
+      const num_label_width = +label_width.substring(0, label_width.length - 2);
+
+      const max = +e.target.max;
+      const min = +e.target.min;
+
+      const left =
+        value * (num_width / max) -
+        num_label_width / 2 +
+        scale(value, min, max, 10, -10);
+      label.style.left = `${left}px`;
+
+      label.innerHTML = value;
+      document.getElementById("slider_input3").value = value;
     });
 
     const scale = (num, in_min, in_max, out_min, out_max) => {
@@ -784,7 +831,7 @@
       var tAmbientVal = $("input[name='tAmbient']:checked").val();
       var tActVal = $("input[name='tAct']:checked").val();
       var alphaVal = $("input[name='alpha']:checked").val();
-      var time;
+      var time = $("input[name='time']:checked").val();
       var vGas, tGas, activationTime, fireSize, Q, tau, deltaT;
 
       $(".btn-clear").click(function () {
