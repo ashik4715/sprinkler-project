@@ -480,8 +480,8 @@
 
         var num1 = 0;
         var num2 = $("input[name='RTI']").val();
-        var num3 = $("input[name='H']").val();
-        var num4 = $("input[name='R']").val();
+        var H = $("input[name='H']").val();
+        var R = $("input[name='R']").val();
         var num5 = $("input[name='alpha']").val();
         var radioAmbient = $("input[name='tAmbient']").val();
         var radioAct = $("input[name='tAct']").val();
@@ -523,8 +523,8 @@
           deltaT = (1 / tau) * tGas;
           num1++;
           num2++;
-          num3++;
-          num4++;
+          H++;
+          R++;
           num5++;
           num6++;
           num7++;
@@ -533,27 +533,15 @@
           arr3.push(vGas);
           arr4.push(tGas);
           arr5.push(num2);
-          arr6.push(num3);
-          arr7.push(num4);
+          arr6.push(H);
+          arr7.push(R);
           arr8.push(num5);
           arr9.push(num6);
           arr10.push(num7);
           arr11.push(tau);
           arr12.push(deltaT);
         }
-        console.log(
-          num1,
-          Q,
-          vGas,
-          tGas,
-          num2,
-          num3,
-          num4,
-          num5,
-          num6,
-          tau,
-          deltaT
-        );
+        console.log(num1, Q, vGas, tGas, num2, H, R, num5, num6, tau, deltaT);
         // export the arrays to CSV
         var csv = "time,Q,RTI,H,R,alpha,tAmbient,tActivation\n";
         for (var i = 0; i < arr1.length; i++) {
@@ -577,13 +565,13 @@
             arr8[i] +
             "\n";
         }
-        // var link = document.createElement("a");
-        // link.setAttribute(
-        //   "href",
-        //   "data:text/csv;charset=utf-8," + encodeURIComponent(csv)
-        // );
-        // link.setAttribute("download", "data.csv");
-        // link.click();
+        var link = document.createElement("a");
+        link.setAttribute(
+          "href",
+          "data:text/csv;charset=utf-8," + encodeURIComponent(csv)
+        );
+        link.setAttribute("download", "data.csv");
+        link.click();
       });
     });
   </script>
