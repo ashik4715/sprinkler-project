@@ -470,7 +470,7 @@
       var tAmbientVal = numAmbientParsed + 273;
       var tActVal = numActParsed + 273;
       var alphaVal = $("input[name='alpha']").val();
-      var vGas, tGas, activationTime, fireSize, Q, tau, deltaT;
+      var Vgas, Tgas, activationTime, fireSize, Q, tau, deltaT;
 
       $(".btn-clear").click(function () {
         $("form")[0].reset();
@@ -479,16 +479,17 @@
         event.preventDefault(); // prevent default form submission
 
         var num1 = 0;
-        var num2 = $("input[name='RTI']").val();
+        var rti = $("input[name='RTI']").val();
         var H = $("input[name='H']").val();
         var R = $("input[name='R']").val();
-        var num5 = $("input[name='alpha']").val();
+        var alphaVal = $("input[name='alpha']").val();
         var radioAmbient = $("input[name='tAmbient']").val();
         var radioAct = $("input[name='tAct']").val();
         const numAmbientParsed = parseFloat(radioAmbient);
         const numActParsed = parseFloat(radioAct);
-        var num6 = numAmbientParsed + 273;
-        var num7 = numActParsed + 273;
+        var Activation = numAmbientParsed + 273;
+        var Ambient = numActParsed + 273;
+        var Tbulb = 293;
         // define the arrays to store the values
         var arr1 = [];
         var arr2 = [];
@@ -497,53 +498,38 @@
         var arr5 = [];
         var arr6 = [];
         var arr7 = [];
-        var arr8 = [];
-        var arr9 = [];
-        var arr10 = [];
-        var arr11 = [];
-        var arr12 = [];
 
         // increment the numbers and store in the arrays until counter hits 100
         // vGas-result, tGas-result, activationTime-result, fireSize-result
         for (var i = 0; i < 100; i++) {
-          Q = num5 * Math.pow(i, 2);
+          Q = alphaVal * Math.pow(i, 2);
           if (R / H > 0.15) {
-            vGas = 0.2 * (Math.pow(Q, 1 / 3) * Math.pow(H, 1 / 2));
+            Vgas = 0.2 * (Math.pow(Q, 1 / 3) * Math.pow(H, 1 / 2));
           }
           if (R / H <= 0.15) {
-            vGas = 0.95 * Math.pow(Q / H, 1 / 3);
+            Vgas = 0.95 * Math.pow(Q / H, 1 / 3);
           }
           if (R / H > 0.18) {
-            tGas = num6 + (5.38 / H) * Math.pow(Q / R, 2 / 3);
+            Tgas = Ambient + (5.38 / H) * Math.pow(Q / R, 2 / 3);
           }
           if (R / H <= 0.18) {
-            tGas = num6 + (16.9 * Math.pow(Q, 2 / 3)) / Math.pow(H, 5 / 3);
+            Tgas = Ambient + (16.9 * Math.pow(Q, 2 / 3)) / Math.pow(H, 5 / 3);
           }
-          tau = num2 / Math.sqrt(vGas);
-          deltaT = (1 / tau) * tGas;
+          tau = rti / Math.sqrt(Vgas);
+          deltaT = (1 / tau) * (Tgas - Tbulb);
+          Tbulb = Tbulb + deltaT;
           num1++;
-          num2++;
-          H++;
-          R++;
-          num5++;
-          num6++;
-          num7++;
-          arr1.push(num1);
+          arr1.push(i);
           arr2.push(Q);
-          arr3.push(vGas);
-          arr4.push(tGas);
-          arr5.push(num2);
-          arr6.push(H);
-          arr7.push(R);
-          arr8.push(num5);
-          arr9.push(num6);
-          arr10.push(num7);
-          arr11.push(tau);
-          arr12.push(deltaT);
+          arr3.push(Vgas);
+          arr4.push(Tgas);
+          arr5.push(tau);
+          arr6.push(Tbulb);
+          arr7.push(deltaT);
         }
-        console.log(num1, Q, vGas, tGas, num2, H, R, num5, num6, tau, deltaT);
+        console.log(num1, Q, Vgas, Tgas, tau, Tbulb, deltaT);
         // export the arrays to CSV
-        var csv = "time,Q,RTI,H,R,alpha,tAmbient,tActivation\n";
+        var csv = "time,Q, Vgas, Tgas, tau, Tbulb, deltaT,\n";
         for (var i = 0; i < arr1.length; i++) {
           csv +=
             arr1[i] +
@@ -559,10 +545,6 @@
             arr5[i] +
             "," +
             arr6[i] +
-            "," +
-            arr7[i] +
-            "," +
-            arr8[i] +
             "\n";
         }
         var link = document.createElement("a");
