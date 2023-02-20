@@ -501,10 +501,12 @@
 
         // increment the numbers and store in the arrays until counter hits 100
         // vGas-result, tGas-result, activationTime-result, fireSize-result
-        for (var i = 0; i < 100; i++) {
+        for (var i = 0; i < 1000; i++) {
           Q = alphaVal * Math.pow(i, 2);
           if (R / H > 0.15) {
-            Vgas = 0.2 * (Math.pow(Q, 1 / 3) * Math.pow(H, 1 / 2));
+            Vgas =
+              0.2 *
+              ((Math.pow(Q, 1 / 3) * Math.pow(H, 1 / 2)) / Math.pow(R, 5 / 6));
           }
           if (R / H <= 0.15) {
             Vgas = 0.95 * Math.pow(Q / H, 1 / 3);
@@ -520,17 +522,17 @@
           Tbulb = Tbulb + deltaT;
           num1++;
           arr1.push(i);
-          arr2.push(Q);
-          arr3.push(Vgas);
-          arr4.push(Tgas);
-          arr5.push(tau);
-          arr6.push(Tbulb);
-          arr7.push(deltaT);
+          arr2.push(Q.toFixed(2));
+          arr3.push(Vgas.toFixed(2));
+          arr4.push(Tgas.toFixed(2));
+          arr5.push(tau.toFixed(2));
+          arr6.push(Tbulb.toFixed(2));
+          arr7.push(deltaT.toFixed(2));
         }
-        console.log(num1, Q, Vgas, Tgas, tau, Tbulb, deltaT);
+        console.log(num1, Q, Vgas, Tgas, tau, deltaT, Tbulb);
         // export the arrays to CSV
-        var csv = "time,Q, Vgas, Tgas, tau, Tbulb, deltaT,\n";
-        for (var i = 0; i < arr1.length; i++) {
+        var csv = "time,Q, Vgas, Tgas, tau,deltaT, Tbulb\n";
+        for (var i = 1; i < arr1.length; i++) {
           csv +=
             arr1[i] +
             "," +
