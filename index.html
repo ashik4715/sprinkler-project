@@ -40,13 +40,12 @@
             <div class="row pb-3">
               <div class="col-sm">
                 RTI <br />
-                Response Time Index
+                (Response Time Index)
               </div>
               <div class="col-sm">
                 <input
                   class="text-center"
                   type="number"
-                  step="0.1"
                   name="RTI"
                   id="slider_input1"
                   placeholder="Slide Or Input RTI"
@@ -54,12 +53,6 @@
                   required
                 />
                 <p class="text-center">&radic;m&lowast;s</p>
-              </div>
-              <div class="col-sm">
-                <div class="range-container">
-                  <input type="range" id="range" min="0" max="1000" />
-                  <label for="range">500</label>
-                </div>
               </div>
             </div>
 
@@ -70,7 +63,6 @@
                 <input
                   class="text-center"
                   type="number"
-                  step="0.1"
                   name="H"
                   id="slider_input2"
                   placeholder="Slide Or Input Height"
@@ -78,43 +70,29 @@
                   required
                 />
               </div>
-              <div class="col-sm">
-                <div class="range-container">
-                  <input type="range" id="range2" min="0" max="100" />
-                  <label for="range2">50</label>
-                </div>
-              </div>
             </div>
 
             <!-- Radial Distance Row -->
             <div class="row py-3">
-              <div class="col-sm">Radial Distance</div>
+              <div class="col-sm">radial distance</div>
               <div class="col-sm">
                 <input
                   class="text-center"
                   type="number"
-                  step="0.1"
                   name="R"
                   id="slider_input3"
-                  placeholder="Slide Radial Distance"
+                  placeholder="Slide radial ristance"
                   onwheel="return false;"
                   required
                 />
               </div>
-              <div class="col-sm">
-                <div class="range-container">
-                  <input type="range" id="range3" min="0" max="100" />
-                  <label for="range3">50</label>
-                </div>
-              </div>
             </div>
 
             <!-- Aplha Row -->
-            <div class="row py-2">
+            <div class="row py-3">
               <div class="col-sm">
                 &alpha; <br />
-                Based on T sqaure Fire <br />
-                Q = &alpha;t&sup2;
+                Based on T sqaure Fire Q = &alpha;t&sup2;
               </div>
               <div class="col-sm">
                 <input
@@ -126,8 +104,9 @@
                   placeholder="&alpha; required"
                   onwheel="return false;"
                   required
-                />
-                <p class="text-center">kW/s&sup2;</p>
+                />kW/s&sup2;
+              </div>
+              <div class="col-sm">
                 <ul
                   style="list-style-type: none"
                   class="list-group list-group-horizontal-md"
@@ -193,7 +172,7 @@
             </div>
 
             <!-- Activation Temperature row -->
-            <div class="row py-2">
+            <div class="row py-3">
               <div class="col-sm">Activation Temperature</div>
               <div class="col-sm">
                 <input
@@ -205,8 +184,9 @@
                   placeholder="Temperature required"
                   onwheel="return false;"
                   required
-                />
-                <p class="text-center">&#8451;</p>
+                />&#8451;
+              </div>
+              <div class="col-sm">
                 <ul
                   style="list-style-type: none"
                   class="list-group list-group-horizontal-md"
@@ -271,7 +251,7 @@
               </div>
             </div>
             <!-- Ambience Temperature row -->
-            <div class="row py-2">
+            <div class="row py-3">
               <div class="col-sm">Ambience Temperature</div>
               <div class="col-sm">
                 <input
@@ -283,8 +263,8 @@
                   placeholder="Ambience required"
                   onwheel="return false;"
                   required
-                />
-                <p class="text-center">&#8451;</p>
+                />&#8451;
+                <!-- <p class="text-center">&#8451;</p> -->
               </div>
               <div class="col-sm">
                 <ul style="list-style-type: none">
@@ -308,11 +288,11 @@
             <!-- end Ambience Temperature row -->
 
             <div class="row py-2">
-              <div class="col-sm-6">
+              <div class="col-sm">
                 <p>Activation time</p>
                 <p>Fire Size</p>
               </div>
-              <div class="col-sm-6">
+              <div class="col-sm">
                 <p class="result-style" id="activationTimeResult"></p>
                 <p class="result-style" id="fireSizeResult"></p>
               </div>
@@ -357,6 +337,7 @@
 
   <!-- inputs and radio button Javascript Below -->
   <script>
+    /*
     const range = document.getElementById("range");
     const range2 = document.getElementById("range2");
     const range3 = document.getElementById("range3");
@@ -433,22 +414,22 @@
         ((num - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min
       );
     };
+    */
 
     $(document).ready(function () {
       $("input[type='radio']").click(function (e) {
-        var radioValue = $("input[name='flexRadioDefault']:checked").val();
+        var radioAlpha = $("input[name='flexRadioDefault']:checked").val();
         var radioAmbient = $("input[name='tAmbientRadio']:checked").val();
         var radioAct = $("input[name='tActRadio']:checked").val();
         e.preventDefault();
 
-        if (radioValue) {
-          document.getElementById("alpha").value = radioValue;
+        if (radioAlpha) {
+          document.getElementById("alpha").value = radioAlpha;
         }
         if (radioAmbient) {
           document.getElementById("tAmbient").value = radioAmbient;
         }
         if (radioAct) {
-          //const numActParsed = parseFloat(radioAct);
           document.getElementById("tAct").value = radioAct;
         }
       });
@@ -554,7 +535,8 @@
             "\n";
         }
         //Print Results
-        $("#activationTimeResult").append(TactivationTimePrint);
+        console.log("Activation Time : ", TactivationTimePrint);
+        $("#activationTimeResult").html(TactivationTimePrint);
 
         //Download CSV
         var link = document.createElement("a");
