@@ -313,10 +313,8 @@
                 <p>Fire Size</p>
               </div>
               <div class="col-sm-6">
-                <p class="activationTime-result result-style">activation</p>
-                <p class="fireSize-result result-style">fireSize</p>
-                <p class="vGas-result result-style">vGas</p>
-                <p class="tGas-result result-style">tGas</p>
+                <p class="result-style" id="activationTimeResult"></p>
+                <p class="result-style" id="fireSizeResult"></p>
               </div>
             </div>
 
@@ -490,6 +488,8 @@
         var Activation = numAmbientParsed + 273;
         var Ambient = numActParsed + 273;
         var Tbulb = 293;
+        var TbulbCounter = 0;
+        var TactivationTimePrint;
         // define the arrays to store the values
         var arr1 = [];
         var arr2 = [];
@@ -497,7 +497,6 @@
         var arr4 = [];
         var arr5 = [];
         var arr6 = [];
-        var arr7 = [];
 
         // increment the numbers and store in the arrays until counter hits 100
         // vGas-result, tGas-result, activationTime-result, fireSize-result
@@ -517,21 +516,26 @@
           if (R / H <= 0.18) {
             Tgas = Ambient + (16.9 * Math.pow(Q, 2 / 3)) / Math.pow(H, 5 / 3);
           }
+
           tau = rti / Math.sqrt(Vgas);
           deltaT = (1 / tau) * (Tgas - Tbulb);
-          Tbulb = Tbulb + deltaT;
+          TbulbCounter = Tbulb + deltaT;
+
+          if (TbulbCounter > Ambient) {
+            TactivationTimePrint = TbulbCounter;
+          }
+
           num1++;
           arr1.push(i);
           arr2.push(Q.toFixed(2));
           arr3.push(Vgas.toFixed(2));
           arr4.push(Tgas.toFixed(2));
-          arr5.push(tau.toFixed(2));
+          arr5.push(deltaT.toFixed(2));
           arr6.push(Tbulb.toFixed(2));
-          arr7.push(deltaT.toFixed(2));
         }
-        console.log(num1, Q, Vgas, Tgas, tau, deltaT, Tbulb);
+        console.log(num1, Q, Vgas, Tgas, deltaT, Tbulb);
         // export the arrays to CSV
-        var csv = "time,Q, Vgas, Tgas, tau,deltaT, Tbulb\n";
+        var csv = "time,Q, Vgas, Tgas,deltaT, Tbulb\n";
         for (var i = 1; i < arr1.length; i++) {
           csv +=
             arr1[i] +
@@ -549,6 +553,10 @@
             arr6[i] +
             "\n";
         }
+        //Print Results
+        $("#activationTimeResult").append(TactivationTimePrint);
+
+        //Download CSV
         var link = document.createElement("a");
         link.setAttribute(
           "href",
