@@ -473,7 +473,8 @@
         var Ambient = numActParsed + 273;
         var Tbulb = 293;
         var TbulbCounter = 0;
-        var TactivationTimePrint;
+        let TactivationTimePrint = 0;
+        let FireSizeOfQ = 0;
         // define the arrays to store the values
         var arr1 = [];
         var arr2 = [];
@@ -484,12 +485,12 @@
 
         // increment the numbers and store in the arrays until counter hits 100
         // vGas-result, tGas-result, activationTime-result, fireSize-result
-        for (var i = 0; i < 1000; i++) {
+        for (var i = 0; i < 3600; i++) {
           Q = alphaVal * Math.pow(i, 2);
           if (R / H > 0.15) {
             Vgas =
-              0.2 *
-              ((Math.pow(Q, 1 / 3) * Math.pow(H, 1 / 2)) / Math.pow(R, 5 / 6));
+              (0.2 * (Math.pow(Q, 1 / 3) * Math.pow(H, 1 / 2))) /
+              Math.pow(R, 5 / 6);
           }
           if (R / H <= 0.15) {
             Vgas = 0.95 * Math.pow(Q / H, 1 / 3);
@@ -502,12 +503,23 @@
           }
 
           tau = rti / Math.sqrt(Vgas);
-          deltaT = (1 / tau) * (Tgas - Tbulb);
-          TbulbCounter = Tbulb + deltaT;
+          deltaT = (1 / tau) * (Tgas - Ambient);
+          TbulbCounter = Ambient + deltaT;
 
-          if (TbulbCounter > Ambient) {
+          if (Math.round(TbulbCounter) >= Activation) {
             TactivationTimePrint = TbulbCounter;
+            FireSizeOfQ = Q;
+            break;
           }
+          console.log(
+            i,
+            Q,
+            Vgas,
+            Tgas,
+            TbulbCounter.toFixed(1),
+            deltaT,
+            Activation
+          );
 
           num1++;
           arr1.push(i);
@@ -517,7 +529,6 @@
           arr5.push(deltaT.toFixed(2));
           arr6.push(Tbulb.toFixed(2));
         }
-        console.log(num1, Q, Vgas, Tgas, deltaT, Tbulb);
         // export the arrays to CSV
         var csv = "time,Q, Vgas, Tgas,deltaT, Tbulb\n";
         for (var i = 1; i < arr1.length; i++) {
@@ -538,12 +549,12 @@
             "\n";
         }
         //Print Results
-        console.log("Activation Time : ", TactivationTimePrint);
+        console.log("Activation Time : ", TactivationTimePrint.toFixed(0));
         $("#activationTimeResult").html(
           Math.round(TactivationTimePrint) + " seconds"
         );
-        console.log("Fire Size : ", Q);
-        $("#fireSizeResult").html(Math.round(Q) + " seconds");
+        console.log("Fire Size : ", FireSizeOfQ.toFixed(0));
+        $("#fireSizeResult").html(Math.round(FireSizeOfQ) + " KW");
 
         //Download CSV
         // var link = document.createElement("a");
