@@ -62,6 +62,7 @@
               <div class="col-sm">
                 <input
                   class="text-center"
+                  step="0.01"
                   type="number"
                   name="H"
                   id="slider_input2"
@@ -79,6 +80,7 @@
               <div class="col-sm">
                 <input
                   class="text-center"
+                  step="0.01"
                   type="number"
                   name="R"
                   id="slider_input3"
@@ -540,15 +542,17 @@
         $("#activationTimeResult").html(
           Math.round(TactivationTimePrint) + " seconds"
         );
+        console.log("Fire Size : ", Q);
+        $("#fireSizeResult").html(Math.round(Q) + " seconds");
 
         //Download CSV
-        var link = document.createElement("a");
-        link.setAttribute(
-          "href",
-          "data:text/csv;charset=utf-8," + encodeURIComponent(csv)
-        );
-        link.setAttribute("download", "data.csv");
-        link.click();
+        // var link = document.createElement("a");
+        // link.setAttribute(
+        //   "href",
+        //   "data:text/csv;charset=utf-8," + encodeURIComponent(csv)
+        // );
+        // link.setAttribute("download", "data.csv");
+        // link.click();
       });
     });
   </script>
