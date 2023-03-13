@@ -45,11 +45,10 @@
               <div class="col-sm">
                 <input
                   class="text-center"
-                  type="number"
+                  type="text"
+                  id="numberField"
                   name="RTI"
-                  id="slider_input1"
                   placeholder="Slide Or Input RTI"
-                  onwheel="return false;"
                   required
                 />
                 &radic;m&lowast;s
@@ -62,12 +61,10 @@
               <div class="col-sm">
                 <input
                   class="text-center"
-                  step="0.01"
-                  type="number"
+                  type="text"
+                  id="H"
                   name="H"
-                  id="slider_input2"
                   placeholder="Slide Or Input Height"
-                  onwheel="return false;"
                   required
                 />
                 m
@@ -80,12 +77,10 @@
               <div class="col-sm">
                 <input
                   class="text-center"
-                  step="0.01"
-                  type="number"
+                  type="text"
+                  id="R"
                   name="R"
-                  id="slider_input3"
                   placeholder="Slide radial ristance"
-                  onwheel="return false;"
                   required
                 />
                 m
@@ -101,12 +96,10 @@
               <div class="col-sm">
                 <input
                   class="text-center"
-                  type="number"
-                  step="0.001"
                   name="alpha"
+                  type="text"
                   id="alpha"
                   placeholder="&alpha; required"
-                  onwheel="return false;"
                   required
                 />kW/s&sup2;
               </div>
@@ -117,58 +110,51 @@
                 >
                   <li class="px-2">
                     <div class="form-check">
-                      <input
-                        class="form-check-input"
-                        type="radio"
+                      <button
+                        class="btn btn-outline-dark btn-sm"
                         name="flexRadioDefault"
-                        id="flexRadioDefault1"
+                        id="flexRadioDefault"
                         value="0.003"
-                      />
-                      <label class="form-check-label" for="flexRadioDefault1">
+                        style="border: 2px solid; border-radius: 3rem"
+                      >
                         Slow
-                      </label>
+                      </button>
                     </div>
-                  </li>
-                  <li class="px-2">
                     <div class="form-check">
-                      <input
-                        class="form-check-input"
-                        type="radio"
+                      <button
+                        class="btn btn-outline-dark btn-sm"
                         name="flexRadioDefault"
-                        id="flexRadioDefault2"
+                        id="flexRadioDefault"
                         value="0.012"
-                      />
-                      <label class="form-check-label" for="flexRadioDefault2">
+                        style="border: 2px solid; border-radius: 3rem"
+                      >
                         Medium
-                      </label>
+                      </button>
                     </div>
                   </li>
                   <li class="px-2">
                     <div class="form-check">
-                      <input
-                        class="form-check-input"
-                        type="radio"
+                      <button
+                        class="btn btn-outline-dark btn-sm"
                         name="flexRadioDefault"
-                        id="flexRadioDefault3"
+                        id="flexRadioDefault"
                         value="0.047"
-                      />
-                      <label class="form-check-label" for="flexRadioDefault3">
+                        style="border: 2px solid; border-radius: 3rem"
+                      >
                         Fast
-                      </label>
+                      </button>
                     </div>
-                  </li>
-                  <li class="px-2">
+
                     <div class="form-check">
-                      <input
-                        class="form-check-input"
-                        type="radio"
+                      <button
+                        class="btn btn-outline-dark btn-sm"
                         name="flexRadioDefault"
-                        id="flexRadioDefault4"
+                        id="flexRadioDefault"
                         value="0.188"
-                      />
-                      <label class="form-check-label" for="flexRadioDefault4">
+                        style="border: 2px solid; border-radius: 3rem"
+                      >
                         Ultrafast
-                      </label>
+                      </button>
                     </div>
                   </li>
                 </ul>
@@ -181,78 +167,15 @@
               <div class="col-sm">
                 <input
                   class="text-center"
-                  type="number"
                   name="tAmbient"
+                  type="text"
                   id="tAmbient"
-                  step="0.1"
                   placeholder="Temperature required"
                   onwheel="return false;"
                   required
                 />&#8451;
               </div>
-              <div class="col-sm">
-                <ul
-                  style="list-style-type: none"
-                  class="list-group list-group-horizontal-md"
-                >
-                  <li class="px-2">
-                    <div class="form-check">
-                      <input
-                        class="form-check-input"
-                        type="radio"
-                        name="tAmbientRadio"
-                        id="flexRadioDefault5"
-                        value="68"
-                      />
-                      <label class="form-check-label" for="flexRadioDefault5">
-                        68&#8451;
-                      </label>
-                    </div>
-                  </li>
-                  <li class="px-2">
-                    <div class="form-check">
-                      <input
-                        class="form-check-input"
-                        type="radio"
-                        name="tAmbientRadio"
-                        id="flexRadioDefault6"
-                        value="79"
-                      />
-                      <label class="form-check-label" for="flexRadioDefault7">
-                        79&#8451;
-                      </label>
-                    </div>
-                  </li>
-                  <li class="px-2">
-                    <div class="form-check">
-                      <input
-                        class="form-check-input"
-                        type="radio"
-                        name="tAmbientRadio"
-                        id="flexRadioDefault8"
-                        value="93"
-                      />
-                      <label class="form-check-label" for="flexRadioDefault9">
-                        93&#8451;
-                      </label>
-                    </div>
-                  </li>
-                  <li class="px-2">
-                    <div class="form-check">
-                      <input
-                        class="form-check-input"
-                        type="radio"
-                        name="tAmbientRadio"
-                        id="flexRadioDefault10"
-                        value="141"
-                      />
-                      <label class="form-check-label" for="flexRadioDefault10">
-                        141&#8451;
-                      </label>
-                    </div>
-                  </li>
-                </ul>
-              </div>
+              <div class="col-sm"></div>
             </div>
             <!-- Ambience Temperature row -->
             <div class="row py-3">
@@ -260,33 +183,15 @@
               <div class="col-sm">
                 <input
                   class="text-center"
-                  type="number"
                   name="tAct"
+                  type="text"
                   id="tAct"
-                  step="0.1"
                   placeholder="Ambience required"
                   onwheel="return false;"
                   required
                 />&#8451;
               </div>
-              <div class="col-sm">
-                <ul style="list-style-type: none">
-                  <li>
-                    <div class="form-check">
-                      <input
-                        class="form-check-input"
-                        type="radio"
-                        name="tActRadio"
-                        id="flexRadioDefault11"
-                        value="20"
-                      />
-                      <label class="form-check-label" for="flexRadioDefault11">
-                        20&#8451;
-                      </label>
-                    </div>
-                  </li>
-                </ul>
-              </div>
+              <div class="col-sm"></div>
             </div>
             <!-- end Ambience Temperature row -->
 
@@ -340,102 +245,34 @@
 
   <!-- inputs and radio button Javascript Below -->
   <script>
-    /*
-    const range = document.getElementById("range");
-    const range2 = document.getElementById("range2");
-    const range3 = document.getElementById("range3");
-
-    range.addEventListener("input", (e) => {
-      const value = +e.target.value;
-      const label = e.target.nextElementSibling;
-
-      const range_width = getComputedStyle(e.target).getPropertyValue("width");
-      const label_width = getComputedStyle(label).getPropertyValue("width");
-
-      const num_width = +range_width.substring(0, range_width.length - 2);
-      const num_label_width = +label_width.substring(0, label_width.length - 2);
-
-      const max = +e.target.max;
-      const min = +e.target.min;
-
-      const left =
-        value * (num_width / max) -
-        num_label_width / 2 +
-        scale(value, min, max, 10, -10);
-      label.style.left = `${left}px`;
-
-      label.innerHTML = value;
-      document.getElementById("slider_input1").value = value;
-    });
-    range2.addEventListener("input", (e) => {
-      const value = +e.target.value;
-      const label = e.target.nextElementSibling;
-
-      const range_width = getComputedStyle(e.target).getPropertyValue("width");
-      const label_width = getComputedStyle(label).getPropertyValue("width");
-
-      const num_width = +range_width.substring(0, range_width.length - 2);
-      const num_label_width = +label_width.substring(0, label_width.length - 2);
-
-      const max = +e.target.max;
-      const min = +e.target.min;
-
-      const left =
-        value * (num_width / max) -
-        num_label_width / 2 +
-        scale(value, min, max, 10, -10);
-      label.style.left = `${left}px`;
-
-      label.innerHTML = value;
-      document.getElementById("slider_input2").value = value;
-    });
-    range3.addEventListener("input", (e) => {
-      const value = +e.target.value;
-      const label = e.target.nextElementSibling;
-
-      const range_width = getComputedStyle(e.target).getPropertyValue("width");
-      const label_width = getComputedStyle(label).getPropertyValue("width");
-
-      const num_width = +range_width.substring(0, range_width.length - 2);
-      const num_label_width = +label_width.substring(0, label_width.length - 2);
-
-      const max = +e.target.max;
-      const min = +e.target.min;
-
-      const left =
-        value * (num_width / max) -
-        num_label_width / 2 +
-        scale(value, min, max, 10, -10);
-      label.style.left = `${left}px`;
-
-      label.innerHTML = value;
-      document.getElementById("slider_input3").value = value;
-    });
-
-    const scale = (num, in_min, in_max, out_min, out_max) => {
-      return (
-        ((num - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min
-      );
-    };
-    */
-
     $(document).ready(function () {
-      $("input[type='radio']").click(function (e) {
-        var radioAlpha = $("input[name='flexRadioDefault']:checked").val();
-        var radioAmbient = $("input[name='tAmbientRadio']:checked").val();
-        var radioAct = $("input[name='tActRadio']:checked").val();
+      $(".btn-outline-dark").click(function (e) {
+        // var radioAlpha = $("input[name='flexRadioDefault']:checked").val();
+        var radioAlpha = $(this).val();
+        console.log(radioAlpha);
         e.preventDefault();
-
         if (radioAlpha) {
-          document.getElementById("alpha").value = radioAlpha;
-        }
-        if (radioAmbient) {
-          document.getElementById("tAmbient").value = radioAmbient;
-        }
-        if (radioAct) {
-          document.getElementById("tAct").value = radioAct;
+          document.querySelector("#alpha").value = radioAlpha;
         }
       });
+
+      function restrictNumber(e) {
+        var newValue = this.value.replace(new RegExp(/[^\d]/, "ig"), "");
+        this.value = newValue;
+      }
+
+      var userName = document.querySelector("#numberField");
+      userName.addEventListener("input", restrictNumber);
+      var alphaName = document.querySelector("#alpha");
+      alphaName.addEventListener("input", restrictNumber);
+      var H = document.querySelector("#H");
+      H.addEventListener("input", restrictNumber);
+      var R = document.querySelector("#R");
+      R.addEventListener("input", restrictNumber);
+      var tAmbient = document.querySelector("#tAmbient");
+      tAmbient.addEventListener("input", restrictNumber);
+      var tAct = document.querySelector("#tAct");
+      tAct.addEventListener("input", restrictNumber);
     });
   </script>
 
@@ -504,10 +341,10 @@
 
           tau = rti / Math.sqrt(Vgas);
           deltaT = (1 / tau) * (Tgas - Ambient);
-          TbulbCounter = Ambient + deltaT;
+          TbulbCounter = Tbulb + deltaT;
 
           if (Math.round(TbulbCounter) >= Activation) {
-            TactivationTimePrint = TbulbCounter;
+            TactivationTimePrint = i;
             FireSizeOfQ = Q;
             break;
           }
