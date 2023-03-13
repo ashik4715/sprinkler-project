@@ -13,6 +13,10 @@ body {
     #aa4b6b
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
+.accordion-button:not(.collapsed) {
+  color: black;
+  background: lightgreen;
+}
 
 .activation-plot {
   background: whitesmoke; /* fallback for old browsers */
