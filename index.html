@@ -29,12 +29,12 @@
   </head>
   <body>
     <div class="container">
-      <h2 class="text-center text-light py-3">Sprinkler/Detector Activation</h2>
-
       <div class="row text-light">
         <div class="col">
           <form action="" class="form-detection">
-            <h4 class="text-info pb-2">Detection / Sprinkler Response Time</h4>
+            <h1 class="text-dark display-5 pt-4">
+              <strong>Sprinkler Response Time</strong>
+            </h1>
             <p class="text-light fst-italic py-3">
               Put desired value in the box or chose the pre-determined value by
               ticking one of the suggested options
@@ -42,176 +42,591 @@
 
             <!-- RTI Row -->
             <div class="row pb-3">
-              <div class="col-sm">
-                RTI <br />
-                (Response Time Index)
-              </div>
-              <div class="col-sm">
+              <div class="col-5">Response Time Index (RTI)</div>
+              <div class="col-5">
                 <input
                   class="text-center"
                   type="text"
                   id="numberField"
                   name="RTI"
-                  placeholder="Slide Or Input RTI"
+                  placeholder="Input value"
+                  style="
+                    border: 1px solid;
+                    border-radius: 1rem;
+                    max-width: 150px;
+                  "
                   required
                 />
-                &radic;m&lowast;s
+                <h6 style="display: inline-flex">&radic;m&lowast;&radic;s</h6>
+              </div>
+              <div class="col">
+                <!-- modal start -->
+                <!-- Button trigger modal -->
+                <button
+                  type="button"
+                  class="btn btn-outline-dark btn-circle"
+                  data-bs-toggle="modal"
+                  data-bs-target="#staticBackdrop"
+                >
+                  !
+                </button>
+                <div
+                  class="modal fade"
+                  id="staticBackdrop"
+                  data-bs-backdrop="static"
+                  data-bs-keyboard="false"
+                  tabindex="-1"
+                  aria-labelledby="staticBackdropLabel"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">
+                          Modal title
+                        </h5>
+                        <button
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div class="modal-body">...</div>
+                      <div class="modal-footer">
+                        <button
+                          type="button"
+                          class="btn btn-secondary"
+                          data-bs-dismiss="modal"
+                        >
+                          Close
+                        </button>
+                        <button type="button" class="btn btn-primary">
+                          Understood
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- modal end -->
               </div>
             </div>
 
             <!-- Height Row -->
             <div class="row py-2">
-              <div class="col-sm">Height</div>
-              <div class="col-sm">
+              <div class="col-5">Height</div>
+              <div class="col-5">
                 <input
                   class="text-center"
                   type="text"
                   id="H"
                   name="H"
-                  placeholder="Slide Or Input Height"
+                  placeholder="Input value"
+                  style="
+                    border: 1px solid;
+                    border-radius: 1rem;
+                    max-width: 150px;
+                  "
                   required
                 />
-                m
+                <h6 style="display: inline-flex">m</h6>
+              </div>
+              <div class="col">
+                <!-- modal start -->
+                <!-- Button trigger modal -->
+                <button
+                  type="button"
+                  class="btn btn-outline-dark btn-circle"
+                  data-bs-toggle="modal"
+                  data-bs-target="#staticBackdrop"
+                >
+                  !
+                </button>
+                <div
+                  class="modal fade"
+                  id="staticBackdrop"
+                  data-bs-backdrop="static"
+                  data-bs-keyboard="false"
+                  tabindex="-1"
+                  aria-labelledby="staticBackdropLabel"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">
+                          Modal title
+                        </h5>
+                        <button
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div class="modal-body">...</div>
+                      <div class="modal-footer">
+                        <button
+                          type="button"
+                          class="btn btn-secondary"
+                          data-bs-dismiss="modal"
+                        >
+                          Close
+                        </button>
+                        <button type="button" class="btn btn-primary">
+                          Understood
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- modal end -->
               </div>
             </div>
 
             <!-- Radial Distance Row -->
             <div class="row py-3">
-              <div class="col-sm">radial distance</div>
-              <div class="col-sm">
+              <div class="col-5">radial distance</div>
+              <div class="col-5">
                 <input
                   class="text-center"
                   type="text"
                   id="R"
                   name="R"
-                  placeholder="Slide radial ristance"
+                  placeholder="Input value"
+                  style="
+                    border: 1px solid;
+                    border-radius: 1rem;
+                    max-width: 150px;
+                  "
                   required
                 />
-                m
+                <h6 style="display: inline-flex">m</h6>
+              </div>
+              <div class="col">
+                <!-- modal start -->
+                <!-- Button trigger modal -->
+                <button
+                  type="button"
+                  class="btn btn-outline-dark btn-circle"
+                  data-bs-toggle="modal"
+                  data-bs-target="#staticBackdrop"
+                >
+                  !
+                </button>
+                <div
+                  class="modal fade"
+                  id="staticBackdrop"
+                  data-bs-backdrop="static"
+                  data-bs-keyboard="false"
+                  tabindex="-1"
+                  aria-labelledby="staticBackdropLabel"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">
+                          Modal title
+                        </h5>
+                        <button
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div class="modal-body">...</div>
+                      <div class="modal-footer">
+                        <button
+                          type="button"
+                          class="btn btn-secondary"
+                          data-bs-dismiss="modal"
+                        >
+                          Close
+                        </button>
+                        <button type="button" class="btn btn-primary">
+                          Understood
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- modal end -->
               </div>
             </div>
 
             <!-- Aplha Row -->
             <div class="row py-3">
-              <div class="col-sm">
-                &alpha; <br />
-                Based on T sqaure Fire Q = &alpha;t&sup2;
-              </div>
-              <div class="col-sm">
+              <div class="col-5">Fire Growth Rate, &alpha;</div>
+              <div class="col-5">
                 <input
                   class="text-center"
                   name="alpha"
                   type="text"
                   id="alpha"
-                  placeholder="&alpha; required"
+                  placeholder="Input value"
+                  style="
+                    border: 1px solid;
+                    border-radius: 1rem;
+                    max-width: 150px;
+                  "
                   required
-                />kW/s&sup2;
+                />
+                <h6 style="display: inline-flex">kW/s&sup2;</h6>
               </div>
-              <div class="col-sm">
-                <ul
-                  style="list-style-type: none"
-                  class="list-group list-group-horizontal-md"
+              <div class="col">
+                <!-- modal start -->
+                <!-- Button trigger modal -->
+                <button
+                  type="button"
+                  class="btn btn-outline-dark btn-circle"
+                  data-bs-toggle="modal"
+                  data-bs-target="#staticBackdrop"
                 >
-                  <li class="px-2">
-                    <div class="form-check">
-                      <button
-                        class="btn btn-outline-dark btn-sm"
-                        name="flexRadioDefault"
-                        id="flexRadioDefault"
-                        value="0.003"
-                        style="border: 2px solid; border-radius: 3rem"
-                      >
-                        Slow
-                      </button>
+                  !
+                </button>
+                <div
+                  class="modal fade"
+                  id="staticBackdrop"
+                  data-bs-backdrop="static"
+                  data-bs-keyboard="false"
+                  tabindex="-1"
+                  aria-labelledby="staticBackdropLabel"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">
+                          Modal title
+                        </h5>
+                        <button
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div class="modal-body">...</div>
+                      <div class="modal-footer">
+                        <button
+                          type="button"
+                          class="btn btn-secondary"
+                          data-bs-dismiss="modal"
+                        >
+                          Close
+                        </button>
+                        <button type="button" class="btn btn-primary">
+                          Understood
+                        </button>
+                      </div>
                     </div>
-                  </li>
-                  <li class="px-2">
-                    <div class="form-check">
-                      <button
-                        class="btn btn-outline-dark btn-sm"
-                        name="flexRadioDefault"
-                        id="flexRadioDefault"
-                        value="0.012"
-                        style="border: 2px solid; border-radius: 3rem"
-                      >
-                        Medium
-                      </button>
-                    </div>
-                  </li>
-                  <li class="px-2">
-                    <div class="form-check">
-                      <button
-                        class="btn btn-outline-dark btn-sm"
-                        name="flexRadioDefault"
-                        id="flexRadioDefault"
-                        value="0.047"
-                        style="border: 2px solid; border-radius: 3rem"
-                      >
-                        Fast
-                      </button>
-                    </div>
-                  </li>
-                  <li class="px-2">
-                    <div class="form-check">
-                      <button
-                        class="btn btn-outline-dark btn-sm"
-                        name="flexRadioDefault"
-                        id="flexRadioDefault"
-                        value="0.188"
-                        style="border: 2px solid; border-radius: 3rem"
-                      >
-                        Ultrafast
-                      </button>
-                    </div>
-                  </li>
-                </ul>
+                  </div>
+                </div>
+                <!-- modal end -->
               </div>
             </div>
 
             <!-- Activation Temperature row -->
             <div class="row py-3">
-              <div class="col-sm">Activation Temperature</div>
-              <div class="col-sm">
+              <div class="col-5">Activation Temperature</div>
+              <div class="col-5">
                 <input
                   class="text-center"
                   name="tAmbient"
                   type="text"
                   id="tAmbient"
-                  placeholder="Temperature required"
-                  onwheel="return false;"
+                  placeholder="Input value"
+                  style="
+                    border: 1px solid;
+                    border-radius: 1rem;
+                    max-width: 150px;
+                  "
                   required
-                />&#8451;
+                />
+                <h6 style="display: inline-flex">&#8451;</h6>
               </div>
-              <div class="col-sm"></div>
+              <div class="col">
+                <!-- modal start -->
+                <!-- Button trigger modal -->
+                <button
+                  type="button"
+                  class="btn btn-outline-dark btn-circle"
+                  data-bs-toggle="modal"
+                  data-bs-target="#staticBackdrop"
+                >
+                  !
+                </button>
+                <div
+                  class="modal fade"
+                  id="staticBackdrop"
+                  data-bs-backdrop="static"
+                  data-bs-keyboard="false"
+                  tabindex="-1"
+                  aria-labelledby="staticBackdropLabel"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">
+                          Modal title
+                        </h5>
+                        <button
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div class="modal-body">...</div>
+                      <div class="modal-footer">
+                        <button
+                          type="button"
+                          class="btn btn-secondary"
+                          data-bs-dismiss="modal"
+                        >
+                          Close
+                        </button>
+                        <button type="button" class="btn btn-primary">
+                          Understood
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- modal end -->
+              </div>
             </div>
             <!-- Ambience Temperature row -->
             <div class="row py-3">
-              <div class="col-sm">Ambience Temperature</div>
-              <div class="col-sm">
+              <div class="col-5">Ambience Temperature</div>
+              <div class="col-5">
                 <input
                   class="text-center"
                   name="tAct"
                   type="text"
                   id="tAct"
-                  placeholder="Ambience required"
-                  onwheel="return false;"
+                  placeholder="Input value"
+                  style="
+                    border: 1px solid;
+                    border-radius: 1rem;
+                    max-width: 150px;
+                  "
                   required
-                />&#8451;
+                />
+                <h6 style="display: inline-flex">&#8451;</h6>
               </div>
-              <div class="col-sm"></div>
+              <div class="col">
+                <!-- modal start -->
+                <!-- Button trigger modal -->
+                <button
+                  type="button"
+                  class="btn btn-outline-dark btn-circle"
+                  data-bs-toggle="modal"
+                  data-bs-target="#staticBackdrop"
+                >
+                  !
+                </button>
+                <div
+                  class="modal fade"
+                  id="staticBackdrop"
+                  data-bs-backdrop="static"
+                  data-bs-keyboard="false"
+                  tabindex="-1"
+                  aria-labelledby="staticBackdropLabel"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">
+                          Modal title
+                        </h5>
+                        <button
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div class="modal-body">...</div>
+                      <div class="modal-footer">
+                        <button
+                          type="button"
+                          class="btn btn-secondary"
+                          data-bs-dismiss="modal"
+                        >
+                          Close
+                        </button>
+                        <button type="button" class="btn btn-primary">
+                          Understood
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- modal end -->
+              </div>
             </div>
             <!-- end Ambience Temperature row -->
 
-            <div class="row py-2">
-              <div class="col-sm">
-                <p>Activation time</p>
-                <p>Fire Size</p>
+            <!-- Total Time Steps Row -->
+            <div class="row pb-3">
+              <div class="col-5">Time Steps</div>
+              <div class="col-5">
+                <input
+                  class="text-center"
+                  type="text"
+                  id="timeStep"
+                  name="timeStep"
+                  placeholder="Input value"
+                  style="
+                    border: 1px solid;
+                    border-radius: 1rem;
+                    max-width: 150px;
+                  "
+                  required
+                />
               </div>
-              <div class="col-sm">
-                <p class="result-style" id="activationTimeResult"></p>
-                <p class="result-style" id="fireSizeResult"></p>
+              <div class="col">
+                <!-- modal start -->
+                <!-- Button trigger modal -->
+                <button
+                  type="button"
+                  class="btn btn-outline-dark btn-circle"
+                  data-bs-toggle="modal"
+                  data-bs-target="#staticBackdrop"
+                >
+                  !
+                </button>
+                <div
+                  class="modal fade"
+                  id="staticBackdrop"
+                  data-bs-backdrop="static"
+                  data-bs-keyboard="false"
+                  tabindex="-1"
+                  aria-labelledby="staticBackdropLabel"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">
+                          Modal title
+                        </h5>
+                        <button
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div class="modal-body">...</div>
+                      <div class="modal-footer">
+                        <button
+                          type="button"
+                          class="btn btn-secondary"
+                          data-bs-dismiss="modal"
+                        >
+                          Close
+                        </button>
+                        <button type="button" class="btn btn-primary">
+                          Understood
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- modal end -->
               </div>
             </div>
+
+            <!-- Total Duration Row -->
+            <div class="row pb-3">
+              <div class="col-5">Total Duration</div>
+              <div class="col-5">
+                <input
+                  class="text-center"
+                  type="text"
+                  id="duration"
+                  name="duration"
+                  placeholder="Input value"
+                  style="
+                    border: 1px solid;
+                    border-radius: 1rem;
+                    max-width: 150px;
+                  "
+                  required
+                />
+                <h6 style="display: inline-flex">s</h6>
+              </div>
+              <div class="col">
+                <!-- modal start -->
+                <!-- Button trigger modal -->
+                <button
+                  type="button"
+                  class="btn btn-outline-dark btn-circle"
+                  data-bs-toggle="modal"
+                  data-bs-target="#staticBackdrop"
+                >
+                  !
+                </button>
+                <div
+                  class="modal fade"
+                  id="staticBackdrop"
+                  data-bs-backdrop="static"
+                  data-bs-keyboard="false"
+                  tabindex="-1"
+                  aria-labelledby="staticBackdropLabel"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">
+                          Modal title
+                        </h5>
+                        <button
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div class="modal-body">...</div>
+                      <div class="modal-footer">
+                        <button
+                          type="button"
+                          class="btn btn-secondary"
+                          data-bs-dismiss="modal"
+                        >
+                          Close
+                        </button>
+                        <button type="button" class="btn btn-primary">
+                          Understood
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- modal end -->
+              </div>
+            </div>
+
+            <section class="sprinkler-result">
+              <div class="row py-2">
+                <div class="col-sm">
+                  <p>Activation time</p>
+                  <p>Fire Size</p>
+                </div>
+                <div class="col-sm">
+                  <p class="result-style" id="activationTimeResult"></p>
+                  <p class="result-style" id="fireSizeResult"></p>
+                </div>
+              </div>
+            </section>
 
             <div class="row py-2 pt-4">
               <div class="col">
@@ -233,7 +648,7 @@
 
         <!-- Results -->
         <div class="col">
-          <div class="accordion" id="accordionExample">
+          <div class="accordion pt-4" id="accordionExample">
             <div class="accordion-item">
               <h2 class="accordion-header" id="headingOne">
                 <button

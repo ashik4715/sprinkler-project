@@ -1,21 +1,42 @@
 body {
-  background: #aa4b6b; /* fallback for old browsers */
+  font-family: "Trebuchet MS";
+  background: #e6e6e6; /* fallback for old browsers */
   background: -webkit-linear-gradient(
     to bottom,
-    #3b8d99,
-    #6b6b83,
-    #aa4b6b
+    #e6e6e6
   ); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(
     to bottom,
-    #3b8d99,
-    #6b6b83,
-    #aa4b6b
+    #e6e6e6
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 .accordion-button:not(.collapsed) {
   color: black;
   background: lightgreen;
+}
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  padding: 6px 0px;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.42857;
+}
+
+.col-sm {
+  color: #595959 !important;
+}
+
+.text-light {
+  color: #595959 !important;
+}
+
+.sprinkler-result {
+  border: 2px solid;
+  background-color: #cde9d9;
+  color: #000;
+  padding: 10px 10px 10px 10px;
 }
 
 .activation-plot {
