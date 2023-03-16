@@ -186,7 +186,7 @@
 
             <!-- Radial Distance Row -->
             <div class="row py-3">
-              <div class="col-5">radial distance</div>
+              <div class="col-5">Radial distance</div>
               <div class="col-5">
                 <input
                   class="text-center"
@@ -617,13 +617,117 @@
 
             <section class="sprinkler-result">
               <div class="row py-2">
-                <div class="col-sm">
+                <div class="col-5">
                   <p>Activation time</p>
                   <p>Fire Size</p>
                 </div>
-                <div class="col-sm">
-                  <p class="result-style" id="activationTimeResult"></p>
-                  <p class="result-style" id="fireSizeResult"></p>
+                <div class="col">
+                  <p class="result-style pb-3" id="activationTimeResult"></p>
+                  <p class="result-style pt-2" id="fireSizeResult"></p>
+                </div>
+                <div class="col text-center">
+                  <section class="time-section pb-1">
+                    <!-- modal start -->
+                    <!-- Button trigger modal -->
+                    <button
+                      type="button"
+                      class="btn btn-outline-dark btn-circle"
+                      data-bs-toggle="modal"
+                      data-bs-target="#staticBackdrop"
+                    >
+                      !
+                    </button>
+                    <div
+                      class="modal fade"
+                      id="staticBackdrop"
+                      data-bs-backdrop="static"
+                      data-bs-keyboard="false"
+                      tabindex="-1"
+                      aria-labelledby="staticBackdropLabel"
+                      aria-hidden="true"
+                    >
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">
+                              Modal title
+                            </h5>
+                            <button
+                              type="button"
+                              class="btn-close"
+                              data-bs-dismiss="modal"
+                              aria-label="Close"
+                            ></button>
+                          </div>
+                          <div class="modal-body">...</div>
+                          <div class="modal-footer">
+                            <button
+                              type="button"
+                              class="btn btn-secondary"
+                              data-bs-dismiss="modal"
+                            >
+                              Close
+                            </button>
+                            <button type="button" class="btn btn-primary">
+                              Understood
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- modal end -->
+                  </section>
+                  <section class="fire-section">
+                    <!-- modal start -->
+                    <!-- Button trigger modal -->
+                    <button
+                      type="button"
+                      class="btn btn-outline-dark btn-circle"
+                      data-bs-toggle="modal"
+                      data-bs-target="#staticBackdrop"
+                    >
+                      !
+                    </button>
+                    <div
+                      class="modal fade"
+                      id="staticBackdrop"
+                      data-bs-backdrop="static"
+                      data-bs-keyboard="false"
+                      tabindex="-1"
+                      aria-labelledby="staticBackdropLabel"
+                      aria-hidden="true"
+                    >
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">
+                              Modal title
+                            </h5>
+                            <button
+                              type="button"
+                              class="btn-close"
+                              data-bs-dismiss="modal"
+                              aria-label="Close"
+                            ></button>
+                          </div>
+                          <div class="modal-body">...</div>
+                          <div class="modal-footer">
+                            <button
+                              type="button"
+                              class="btn btn-secondary"
+                              data-bs-dismiss="modal"
+                            >
+                              Close
+                            </button>
+                            <button type="button" class="btn btn-primary">
+                              Understood
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- modal end -->
+                  </section>
                 </div>
               </div>
             </section>
@@ -774,19 +878,9 @@
       var arr4 = [];
       var arr5 = [];
       var arr6 = [];
-      var csv = "time,Q, Vgas, Tgas,deltaT, Tbulb\n";
 
-      var RTI = $("input[name='RTI']").val();
-      var R = $("input[name='R']").val();
-      var H = $("input[name='H']").val();
-      var radioAmbient = $("input[name='tAmbient']").val();
-      var radioAct = $("input[name='tAct']").val();
-      const numAmbientParsed = parseFloat(radioAmbient);
-      const numActParsed = parseFloat(radioAct);
-      var tAmbientVal = numAmbientParsed + 273;
-      var tActVal = numActParsed + 273;
-      var alphaVal = $("input[name='alpha']").val();
-      var Vgas, Tgas, activationTime, fireSize, Q, tau, deltaT;
+      var Vgas, Tgas, Q, tau, deltaT;
+      var csv = "time,Q, Vgas, Tgas, Tbulb, deltaT\n";
 
       $(".btn-clear").click(function () {
         $("form")[0].reset();
@@ -794,19 +888,17 @@
       $("form").submit(function (event) {
         event.preventDefault(); // prevent default form submission
 
-        var rti = $("input[name='RTI']").val();
-        var H = $("input[name='H']").val();
-        var R = $("input[name='R']").val();
-        var alphaVal = $("input[name='alpha']").val();
-        var radioAmbient = $("input[name='tAmbient']").val();
-        var radioAct = $("input[name='tAct']").val();
-        var timeStep = $("input[name='timeStep']").val();
-        var duration = $("input[name='duration']").val();
-        const numAmbientParsed = parseFloat(radioAmbient);
-        const numActParsed = parseFloat(radioAct);
-        var Activation = numAmbientParsed + 273;
-        var Ambient = numActParsed + 273;
-        var Tbulb = 293;
+        var rti = parseFloat($("input[name='RTI']").val());
+        var R = parseFloat($("input[name='R']").val());
+        var H = parseFloat($("input[name='H']").val());
+        var alphaVal = parseFloat($("input[name='alpha']").val());
+        var radioAmbient = parseFloat($("input[name='tAmbient']").val());
+        var radioAct = parseFloat($("input[name='tAct']").val());
+        var timeStep = parseFloat($("input[name='timeStep']").val());
+        var duration = parseFloat($("input[name='duration']").val());
+        var Activation = radioAmbient + parseFloat(273);
+        var Ambient = radioAct + parseFloat(273);
+        var Tbulb = parseFloat(293);
         var TbulbCounter = 0;
         let TactivationTimePrint = 0;
         let FireSizeOfQ = 0;
@@ -815,66 +907,74 @@
           num = Math.round(num + "e" + decimalPlaces);
           return Number(num + "e" + -decimalPlaces);
         }
-        // vGas-result, tGas-result, activationTime-result, fireSize-result
-        for (var i = 0; i < duration; timeStep++) {
-          var preQ = alphaVal * Math.pow(timeStep, 2);
-          Q = round(preQ, 2);
-          if (R / H > 0.15) {
-            Vgas = parseFloat(
+
+        // function addConcurent(num1, num2, num3, num4) {
+        //   num4 = num1 + num2 + num3;
+        //   return num4;
+        // }
+
+        // loop of result
+        for (var i = 1; i <= duration; i++) {
+          var preQ = alphaVal * parseFloat(i * i);
+          Q = preQ;
+          if (parseFloat(R / H) > parseFloat(0.15)) {
+            Vgas =
               (0.2 * Math.pow(Q, 1 / 3) * Math.pow(H, 1 / 2)) /
-                Math.pow(R, 5 / 6)
-            );
+              Math.pow(R, 5 / 6);
           }
-          if (R / H <= 0.15) {
-            Vgas = parseFloat(0.95 * Math.pow(Q / H, 1 / 3));
+          if (parseFloat(R / H) <= parseFloat(0.15)) {
+            Vgas = 0.95 * Math.pow(Q / H, 1 / 3);
           }
-          if (R / H > 0.18) {
-            Tgas = parseFloat(Ambient + (5.38 / H) * Math.pow(Q / R, 2 / 3));
+          if (parseFloat(R / H) > parseFloat(0.18)) {
+            var preTgas = (5.38 / H) * Math.pow(Q / R, 2 / 3);
+            Tgas = preTgas + Ambient;
           }
-          if (R / H <= 0.18) {
-            Tgas = parseFloat(
-              Ambient + (16.9 * Math.pow(Q, 2 / 3)) / Math.pow(H, 5 / 3)
-            );
+          if (parseFloat(R / H) <= parseFloat(0.18)) {
+            var preTgas = Math.pow(Q, 2 / 3) / Math.pow(H, 5 / 3);
+            Tgas = Ambient + 16.9 * preTgas;
           }
 
-          tau = round(rti / Math.sqrt(Vgas), 1);
-          deltaT = (1 / tau) * (Tgas - Ambient);
-          Tbulb = parseFloat(Tgas) + parseFloat(deltaT);
-          TbulbCounter = parseFloat(Tbulb) + parseFloat(deltaT);
-          if (TbulbCounter > Activation) {
+          tau = rti / Math.sqrt(Vgas);
+          deltaT = (1 / round(tau, 2)) * (Tgas - Ambient);
+          Tbulb = Ambient + (Tgas - Tbulb) + deltaT;
+          // var Tbulb = addConcurent(Ambient, round(deltaT, 2), Tbulb);
+          console.log(Tbulb);
+          TbulbCounter = Tbulb + parseFloat(round(deltaT, 2));
+          if (TbulbCounter >= Activation) {
             TactivationTimePrint = i;
             FireSizeOfQ = preQ;
             break;
           }
           console.log(
-            "Tbulb,TbulbCounter,tau, Q, Vgas, Tgas, delta",
+            "time,TbulbCounter Q, Vgas, Tgas, delta, tau",
             "\n",
-            +Tbulb +
+            +i +
               ", " +
-              Math.round(TbulbCounter, 1) +
+              round(TbulbCounter, 2) +
               ", " +
-              tau +
-              ", " +
-              Q +
+              round(Q, 2) +
               " , " +
-              Vgas +
+              round(Vgas, 2) +
               " , " +
-              Tgas +
+              round(Tgas, 2) +
               " , " +
-              deltaT
+              round(deltaT, 3) +
+              " , " +
+              1 / tau
           );
 
           arr1.push(i);
           arr2.push(Q);
-          arr3.push(Vgas);
-          arr4.push(Tgas);
-          arr5.push(deltaT);
-          arr6.push(Tbulb);
-          i++;
+          arr3.push(Vgas.toFixed(2));
+          arr4.push(Tgas.toFixed(2));
+          arr5.push(TbulbCounter.toFixed(2));
+          arr6.push(deltaT.toFixed(2));
+
+          timeStep = round(parseFloat(timeStep) + 0.1, 2);
         }
 
         // export the arrays to CSV
-        for (var i = 1; i < arr1.length; i++) {
+        for (var i = 0; i < arr1.length; i++) {
           csv +=
             arr1[i] +
             "," +
