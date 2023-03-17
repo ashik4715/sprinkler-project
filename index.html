@@ -28,7 +28,7 @@
     <title>Sprinkler Project</title>
   </head>
   <body>
-    <div class="container-sm">
+    <div class="container">
       <form action="" class="form-detection">
         <div class="row text-light">
           <div class="col">
@@ -994,44 +994,46 @@
                   data-bs-parent="#accordionExample"
                 >
                   <div class="accordion-body">
-                    <strong
-                      >There will graph photo.
+                    <!-- graphs -->
+                    <div class="row">
+                      <div class="col">
+                        <div
+                          class="line-chart"
+                          id="myDiv"
+                          style="width: 100%; max-width: 600px"
+                        ></div>
+                        <p class="text-center text-danger">Q vs T</p>
 
-                      <ul>
-                        <li>
-                          <div
-                            class="line-chart"
-                            id="myDiv"
-                            style="width: 100%; max-width: 600px"
-                          ></div>
-                          <p class="text-center text-danger">QvsT</p>
-                        </li>
-                        <li>
-                          <div
-                            class="line-chart"
-                            id="myDiv2"
-                            style="width: 100%; max-width: 600px"
-                          ></div>
-                          <p class="text-center text-danger">VgasvsTime</p>
-                        </li>
-                        <li>
-                          <div
-                            class="line-chart"
-                            id="myDiv3"
-                            style="width: 100%; max-width: 600px"
-                          ></div>
-                          <p class="text-center text-danger">TgasvsTime</p>
-                        </li>
-                        <li>
-                          <div
-                            class="line-chart"
-                            id="myDiv4"
-                            style="width: 100%; max-width: 600px"
-                          ></div>
-                          <p class="text-center text-danger">QvsTgas</p>
-                        </li>
-                      </ul>
-                    </strong>
+                        <div
+                          class="line-chart"
+                          id="myDiv2"
+                          style="width: 100%; max-width: 600px"
+                        ></div>
+                        <p class="text-center text-danger">
+                          V<sub>gas</sub> vs Time
+                        </p>
+                      </div>
+                      <div class="col">
+                        <div
+                          class="line-chart"
+                          id="myDiv3"
+                          style="width: 100%; max-width: 600px"
+                        ></div>
+                        <p class="text-center text-danger">
+                          T<sub>gas</sub> vs Time
+                        </p>
+
+                        <div
+                          class="line-chart"
+                          id="myDiv4"
+                          style="width: 100%; max-width: 600px"
+                        ></div>
+                        <p class="text-center text-danger">
+                          Q vs T<sub>gas</sub>
+                        </p>
+                      </div>
+                    </div>
+                    <!-- end graphs -->
                   </div>
                 </div>
               </div>
