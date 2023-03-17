@@ -10,10 +10,15 @@ body {
     #e6e6e6
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
+.accordion-button.collapsed {
+  color: black;
+  background: #cde9d9;
+}
 .accordion-button:not(.collapsed) {
   color: black;
   background: lightgreen;
 }
+
 .btn-circle {
   width: 30px;
   height: 30px;
@@ -122,8 +127,12 @@ canvas {
 
 .result-style {
   text-align: center;
-  border: 1.5px grey solid;
-  border-radius: 5px;
+  border: 1px solid;
+  color: #000;
+  background-color: gold;
+  border-radius: 1rem;
+  max-width: 144px;
+  margin-bottom: 20px;
 }
 
 /* Chart.js */

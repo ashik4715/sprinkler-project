@@ -79,11 +79,11 @@
                   aria-labelledby="staticBackdropLabel"
                   aria-hidden="true"
                 >
-                  <div class="modal-dialog">
+                  <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                       <div class="modal-header">
                         <h5 class="modal-title" id="staticBackdropLabel">
-                          Modal title
+                          <strong>Response Time Index (RTI)</strong>
                         </h5>
                         <button
                           type="button"
@@ -92,7 +92,45 @@
                           aria-label="Close"
                         ></button>
                       </div>
-                      <div class="modal-body">...</div>
+                      <div class="modal-body">
+                        <div class="d-flex">
+                          <p class="fs-6">
+                            The thermal sensitivity of a sprinkler measures how
+                            quickly the thermal element operates. Perhaps the
+                            most common way of measuring thermal sensitivity is
+                            the response time index (RTI). Sprinklers are then
+                            categorized into fast or standard response based on
+                            their RTI. The RTI is typically determined by
+                            conducting a plunge test in which a sprinkler is
+                            placed (plunged) into a heated laminar airflow
+                            within a test oven. Then, the operating time of the
+                            sprinkler, the operating temperature of the
+                            sprinkler’s heat-responsive element, the air
+                            temperature of the test oven, the air velocity of
+                            the test oven, and the sprinkler’s conductivity
+                            factor are used to calculate the RTI. Additional
+                            factors impact the response such as the temperature
+                            rating of the sprinkler, sprinkler position, fire
+                            exposure, and radiation. The response time is
+                            expressed as a response time index (RTI), which
+                            typically has values between 35 m ½ s ½ and 250 m ½
+                            s ½ , where a low value indicates a fast response.
+                          </p>
+                        </div>
+                        <div class="row text-center">
+                          <div class="col">
+                            <img
+                              class="img-fluid"
+                              src="img/RTI.png"
+                              alt="equations"
+                            />
+                          </div>
+                          <p>
+                            Source: NFPA 13, Standard for the Installation of
+                            Sprinkler Systems, Edition 2022
+                          </p>
+                        </div>
+                      </div>
                       <div class="modal-footer">
                         <button
                           type="button"
@@ -100,9 +138,6 @@
                           data-bs-dismiss="modal"
                         >
                           Close
-                        </button>
-                        <button type="button" class="btn btn-primary">
-                          Understood
                         </button>
                       </div>
                     </div>
@@ -114,7 +149,7 @@
 
             <!-- Height Row -->
             <div class="row py-2">
-              <div class="col-5">Height</div>
+              <div class="col-5">Height of Ceiling, H</div>
               <div class="col-5">
                 <input
                   class="text-center"
@@ -138,24 +173,24 @@
                   type="button"
                   class="btn btn-outline-dark btn-circle"
                   data-bs-toggle="modal"
-                  data-bs-target="#staticBackdrop"
+                  data-bs-target="#exampleModal"
                 >
                   !
                 </button>
                 <div
                   class="modal fade"
-                  id="staticBackdrop"
+                  id="exampleModal"
                   data-bs-backdrop="static"
                   data-bs-keyboard="false"
                   tabindex="-1"
-                  aria-labelledby="staticBackdropLabel"
+                  aria-labelledby="exampleModalLabel"
                   aria-hidden="true"
                 >
-                  <div class="modal-dialog">
+                  <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h5 class="modal-title" id="staticBackdropLabel">
-                          Modal title
+                        <h5 class="modal-title" id="exampleModalLabel">
+                          <strong>Ceiling Height</strong>
                         </h5>
                         <button
                           type="button"
@@ -164,7 +199,23 @@
                           aria-label="Close"
                         ></button>
                       </div>
-                      <div class="modal-body">...</div>
+                      <div class="modal-body">
+                        This is the height of the ceiling which is measured from
+                        the floor level.
+                        <div class="row text-center">
+                          <div class="col">
+                            <img
+                              class="img-fluid"
+                              src="img/Ceiling-Height.jpg"
+                              alt="equations"
+                            />
+                          </div>
+                          <p>
+                            Figure adopted from Dr Ronald L. Alpert’s
+                            presentation given on FIRESEAT 2011, Edinburgh, UK
+                          </p>
+                        </div>
+                      </div>
                       <div class="modal-footer">
                         <button
                           type="button"
@@ -172,9 +223,6 @@
                           data-bs-dismiss="modal"
                         >
                           Close
-                        </button>
-                        <button type="button" class="btn btn-primary">
-                          Understood
                         </button>
                       </div>
                     </div>
@@ -186,7 +234,7 @@
 
             <!-- Radial Distance Row -->
             <div class="row py-3">
-              <div class="col-5">Radial distance</div>
+              <div class="col-5">Radial Distance, r</div>
               <div class="col-5">
                 <input
                   class="text-center"
@@ -210,24 +258,24 @@
                   type="button"
                   class="btn btn-outline-dark btn-circle"
                   data-bs-toggle="modal"
-                  data-bs-target="#staticBackdrop"
+                  data-bs-target="#exampleModal2"
                 >
                   !
                 </button>
                 <div
                   class="modal fade"
-                  id="staticBackdrop"
+                  id="exampleModal2"
                   data-bs-backdrop="static"
                   data-bs-keyboard="false"
                   tabindex="-1"
-                  aria-labelledby="staticBackdropLabel"
+                  aria-labelledby="exampleModalLabel2"
                   aria-hidden="true"
                 >
-                  <div class="modal-dialog">
+                  <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h5 class="modal-title" id="staticBackdropLabel">
-                          Modal title
+                        <h5 class="modal-title" id="exampleModalLabel2">
+                          <strong>Radial Distance</strong>
                         </h5>
                         <button
                           type="button"
@@ -236,7 +284,23 @@
                           aria-label="Close"
                         ></button>
                       </div>
-                      <div class="modal-body">...</div>
+                      <div class="modal-body">
+                        This is the distance of the sprinkler from the center
+                        line of the smoke plume.
+                        <div class="row text-center">
+                          <div class="col">
+                            <img
+                              class="img-fluid"
+                              src="img/Radial Distance.jpg"
+                              alt="equations"
+                            />
+                          </div>
+                          <p>
+                            Figure adopted from Dr Ronald L. Alpert’s
+                            presentation given on FIRESEAT 2011, Edinburgh, UK
+                          </p>
+                        </div>
+                      </div>
                       <div class="modal-footer">
                         <button
                           type="button"
@@ -244,9 +308,6 @@
                           data-bs-dismiss="modal"
                         >
                           Close
-                        </button>
-                        <button type="button" class="btn btn-primary">
-                          Understood
                         </button>
                       </div>
                     </div>
@@ -282,24 +343,24 @@
                   type="button"
                   class="btn btn-outline-dark btn-circle"
                   data-bs-toggle="modal"
-                  data-bs-target="#staticBackdrop"
+                  data-bs-target="#exampleModal3"
                 >
                   !
                 </button>
                 <div
                   class="modal fade"
-                  id="staticBackdrop"
+                  id="exampleModal3"
                   data-bs-backdrop="static"
                   data-bs-keyboard="false"
                   tabindex="-1"
-                  aria-labelledby="staticBackdropLabel"
+                  aria-labelledby="exampleModalLabel3"
                   aria-hidden="true"
                 >
-                  <div class="modal-dialog">
+                  <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h5 class="modal-title" id="staticBackdropLabel">
-                          Modal title
+                        <h5 class="modal-title" id="exampleModalLabel3">
+                          <strong>Fire Growth Rate</strong>
                         </h5>
                         <button
                           type="button"
@@ -308,7 +369,31 @@
                           aria-label="Close"
                         ></button>
                       </div>
-                      <div class="modal-body">...</div>
+                      <div class="modal-body">
+                        <p>
+                          The fire growth rate (alpha) is a term used in fire
+                          engineering to describe the speed at which a fire
+                          increases in size or intensity over time. It is a
+                          measure of the rate of heat release from the fire,
+                          typically expressed in units of kW/m².
+                        </p>
+                        <p>
+                          The alpha factor depends on various factors such as
+                          the fuel type, the ventilation conditions, and the
+                          geometry of the enclosure where the fire is burning.
+                          The following table has been adopted from BS 9999:2017
+                          (Section 6.3)
+                        </p>
+                        <div class="row text-center">
+                          <div class="col">
+                            <img
+                              class="img-fluid"
+                              src="img/Fire-Growth-Rate.jpg"
+                              alt="equations"
+                            />
+                          </div>
+                        </div>
+                      </div>
                       <div class="modal-footer">
                         <button
                           type="button"
@@ -316,9 +401,6 @@
                           data-bs-dismiss="modal"
                         >
                           Close
-                        </button>
-                        <button type="button" class="btn btn-primary">
-                          Understood
                         </button>
                       </div>
                     </div>
@@ -330,7 +412,7 @@
 
             <!-- Activation Temperature row -->
             <div class="row py-3">
-              <div class="col-5">Activation Temperature</div>
+              <div class="col-5">Activation Temperature, T<sub>act</sub></div>
               <div class="col-5">
                 <input
                   class="text-center"
@@ -354,24 +436,24 @@
                   type="button"
                   class="btn btn-outline-dark btn-circle"
                   data-bs-toggle="modal"
-                  data-bs-target="#staticBackdrop"
+                  data-bs-target="#exampleModal4"
                 >
                   !
                 </button>
                 <div
                   class="modal fade"
-                  id="staticBackdrop"
+                  id="exampleModal4"
                   data-bs-backdrop="static"
                   data-bs-keyboard="false"
                   tabindex="-1"
-                  aria-labelledby="staticBackdropLabel"
+                  aria-labelledby="exampleModalLabel4"
                   aria-hidden="true"
                 >
-                  <div class="modal-dialog">
+                  <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h5 class="modal-title" id="staticBackdropLabel">
-                          Modal title
+                        <h5 class="modal-title" id="exampleModalLabel4">
+                          <strong>Sprinkler Activation Temperature</strong>
                         </h5>
                         <button
                           type="button"
@@ -380,7 +462,44 @@
                           aria-label="Close"
                         ></button>
                       </div>
-                      <div class="modal-body">...</div>
+                      <div class="modal-body">
+                        <p>
+                          Looking closely at sprinklers with glass bulbs, it can
+                          be noticed that there are different colour bulbs. The
+                          colours identify the temperature rating of the
+                          sprinkler or in other word, the temperature at which
+                          sprinkler bulb activates and let the water flow. The
+                          temperature rating of the sprinkler selected needs to
+                          consider the maximum ambient ceiling temperature as
+                          well as the occupancy classification. If the maximum
+                          ambient ceiling temperature isn’t considered, it could
+                          result in accidental sprinkler operation since
+                          sprinklers are activated by heat. If the sprinkler
+                          does not have a glass bulb, then the frame arm,
+                          deflector or coating material will usually have some
+                          colour indicating the temperature rating. A range of
+                          sprinkler head operating temperature ratings is shown
+                          below.
+                        </p>
+                        <div class="text-center">
+                          <img
+                            class="img-fluid"
+                            src="img/Bulbs-chart.png"
+                            alt="equations"
+                          />
+                          <img
+                            class="img-fluid"
+                            src="img/Bulbs.png"
+                            alt="equations"
+                          />
+                          <p>
+                            Source:
+                            <br />BAFSA Information File, Sprinkler Heads; Issue
+                            1; BIF No 8C, May 2010 <br />NFPA 13, Standard for
+                            the Installation of Sprinkler Systems, Edition 2022
+                          </p>
+                        </div>
+                      </div>
                       <div class="modal-footer">
                         <button
                           type="button"
@@ -388,9 +507,6 @@
                           data-bs-dismiss="modal"
                         >
                           Close
-                        </button>
-                        <button type="button" class="btn btn-primary">
-                          Understood
                         </button>
                       </div>
                     </div>
@@ -401,7 +517,7 @@
             </div>
             <!-- Ambience Temperature row -->
             <div class="row py-3">
-              <div class="col-5">Ambience Temperature</div>
+              <div class="col-5">Ambience Temperature, T<sub>amb</sub></div>
               <div class="col-5">
                 <input
                   class="text-center"
@@ -418,6 +534,7 @@
                 />
                 <h6 style="display: inline-flex">&#8451;</h6>
               </div>
+
               <div class="col">
                 <!-- modal start -->
                 <!-- Button trigger modal -->
@@ -425,24 +542,24 @@
                   type="button"
                   class="btn btn-outline-dark btn-circle"
                   data-bs-toggle="modal"
-                  data-bs-target="#staticBackdrop"
+                  data-bs-target="#exampleModal5"
                 >
                   !
                 </button>
                 <div
                   class="modal fade"
-                  id="staticBackdrop"
+                  id="exampleModal5"
                   data-bs-backdrop="static"
                   data-bs-keyboard="false"
                   tabindex="-1"
-                  aria-labelledby="staticBackdropLabel"
+                  aria-labelledby="exampleModalLabel5"
                   aria-hidden="true"
                 >
-                  <div class="modal-dialog">
+                  <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h5 class="modal-title" id="staticBackdropLabel">
-                          Modal title
+                        <h5 class="modal-title" id="exampleModalLabel5">
+                          <strong>Ambient Temperature</strong>
                         </h5>
                         <button
                           type="button"
@@ -451,7 +568,16 @@
                           aria-label="Close"
                         ></button>
                       </div>
-                      <div class="modal-body">...</div>
+                      <div class="modal-body">
+                        <p>
+                          This is the room temperature at which the system
+                          implicates the study. The widely used temperature is
+                          used ranging from <strong>18°C to 20°C</strong> in
+                          cold countries. However, this temperature can vary
+                          whether increasing or decreasing based on system
+                          specification or geographical locations.
+                        </p>
+                      </div>
                       <div class="modal-footer">
                         <button
                           type="button"
@@ -459,9 +585,6 @@
                           data-bs-dismiss="modal"
                         >
                           Close
-                        </button>
-                        <button type="button" class="btn btn-primary">
-                          Understood
                         </button>
                       </div>
                     </div>
@@ -474,7 +597,7 @@
 
             <!-- Total Time Steps Row -->
             <div class="row pb-3">
-              <div class="col-5">Time Steps</div>
+              <div class="col-5">Time Step</div>
               <div class="col-5">
                 <input
                   class="text-center"
@@ -497,24 +620,24 @@
                   type="button"
                   class="btn btn-outline-dark btn-circle"
                   data-bs-toggle="modal"
-                  data-bs-target="#staticBackdrop"
+                  data-bs-target="#exampleModal6"
                 >
                   !
                 </button>
                 <div
                   class="modal fade"
-                  id="staticBackdrop"
+                  id="exampleModal6"
                   data-bs-backdrop="static"
                   data-bs-keyboard="false"
                   tabindex="-1"
-                  aria-labelledby="staticBackdropLabel"
+                  aria-labelledby="exampleModalLabel6"
                   aria-hidden="true"
                 >
-                  <div class="modal-dialog">
+                  <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h5 class="modal-title" id="staticBackdropLabel">
-                          Modal title
+                        <h5 class="modal-title" id="exampleModalLabel6">
+                          <strong>Timestep</strong>
                         </h5>
                         <button
                           type="button"
@@ -523,7 +646,14 @@
                           aria-label="Close"
                         ></button>
                       </div>
-                      <div class="modal-body">...</div>
+                      <div class="modal-body">
+                        <p>
+                          This is the increment of time in the solver.
+                          <code>For example,</code> timestep = 1 means, the
+                          solver will iterate the equation with an increment of
+                          one second each time.
+                        </p>
+                      </div>
                       <div class="modal-footer">
                         <button
                           type="button"
@@ -531,9 +661,6 @@
                           data-bs-dismiss="modal"
                         >
                           Close
-                        </button>
-                        <button type="button" class="btn btn-primary">
-                          Understood
                         </button>
                       </div>
                     </div>
@@ -569,24 +696,24 @@
                   type="button"
                   class="btn btn-outline-dark btn-circle"
                   data-bs-toggle="modal"
-                  data-bs-target="#staticBackdrop"
+                  data-bs-target="#exampleModal7"
                 >
                   !
                 </button>
                 <div
                   class="modal fade"
-                  id="staticBackdrop"
+                  id="exampleModal7"
                   data-bs-backdrop="static"
                   data-bs-keyboard="false"
                   tabindex="-1"
-                  aria-labelledby="staticBackdropLabel"
+                  aria-labelledby="exampleModalLabel7"
                   aria-hidden="true"
                 >
-                  <div class="modal-dialog">
+                  <div class="modal-dialog modal-lg">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h5 class="modal-title" id="staticBackdropLabel">
-                          Modal title
+                        <h5 class="modal-title" id="exampleModalLabel7">
+                          <strong>Duration of Fire</strong>
                         </h5>
                         <button
                           type="button"
@@ -595,7 +722,12 @@
                           aria-label="Close"
                         ></button>
                       </div>
-                      <div class="modal-body">...</div>
+                      <div class="modal-body">
+                        <p>
+                          This is the value which indicates the duration of the
+                          fire that we want to simulate.
+                        </p>
+                      </div>
                       <div class="modal-footer">
                         <button
                           type="button"
@@ -603,9 +735,6 @@
                           data-bs-dismiss="modal"
                         >
                           Close
-                        </button>
-                        <button type="button" class="btn btn-primary">
-                          Understood
                         </button>
                       </div>
                     </div>
@@ -616,16 +745,16 @@
             </div>
 
             <section class="sprinkler-result">
-              <div class="row py-2">
+              <div class="row pt-3">
                 <div class="col-5">
-                  <p>Activation time</p>
-                  <p>Fire Size</p>
+                  <p class="px-5">Activation time</p>
+                  <p class="px-5">Fire Size</p>
+                </div>
+                <div class="col-5">
+                  <p class="result-style" id="activationTimeResult">s</p>
+                  <p class="result-style" id="fireSizeResult">kW</p>
                 </div>
                 <div class="col">
-                  <p class="result-style pb-3" id="activationTimeResult"></p>
-                  <p class="result-style pt-2" id="fireSizeResult"></p>
-                </div>
-                <div class="col text-center">
                   <section class="time-section pb-1">
                     <!-- modal start -->
                     <!-- Button trigger modal -->
@@ -633,24 +762,24 @@
                       type="button"
                       class="btn btn-outline-dark btn-circle"
                       data-bs-toggle="modal"
-                      data-bs-target="#staticBackdrop"
+                      data-bs-target="#exampleModal8"
                     >
                       !
                     </button>
                     <div
                       class="modal fade"
-                      id="staticBackdrop"
+                      id="exampleModal8"
                       data-bs-backdrop="static"
                       data-bs-keyboard="false"
                       tabindex="-1"
-                      aria-labelledby="staticBackdropLabel"
+                      aria-labelledby="exampleModalLabel8"
                       aria-hidden="true"
                     >
-                      <div class="modal-dialog">
+                      <div class="modal-dialog modal-lg">
                         <div class="modal-content">
                           <div class="modal-header">
-                            <h5 class="modal-title" id="staticBackdropLabel">
-                              Modal title
+                            <h5 class="modal-title" id="exampleModalLabel8">
+                              <strong>Sprinkler Activation Time</strong>
                             </h5>
                             <button
                               type="button"
@@ -659,7 +788,14 @@
                               aria-label="Close"
                             ></button>
                           </div>
-                          <div class="modal-body">...</div>
+                          <div class="modal-body">
+                            <p>
+                              The time at which sprinkler activates.
+                              <code>For the simulation of the fire,</code> is
+                              the point after which we can use the extinguishing
+                              factor or reduction factor.
+                            </p>
+                          </div>
                           <div class="modal-footer">
                             <button
                               type="button"
@@ -667,9 +803,6 @@
                               data-bs-dismiss="modal"
                             >
                               Close
-                            </button>
-                            <button type="button" class="btn btn-primary">
-                              Understood
                             </button>
                           </div>
                         </div>
@@ -684,24 +817,24 @@
                       type="button"
                       class="btn btn-outline-dark btn-circle"
                       data-bs-toggle="modal"
-                      data-bs-target="#staticBackdrop"
+                      data-bs-target="#exampleModal9"
                     >
                       !
                     </button>
                     <div
                       class="modal fade"
-                      id="staticBackdrop"
+                      id="exampleModal9"
                       data-bs-backdrop="static"
                       data-bs-keyboard="false"
                       tabindex="-1"
-                      aria-labelledby="staticBackdropLabel"
+                      aria-labelledby="exampleModalLabel9"
                       aria-hidden="true"
                     >
                       <div class="modal-dialog">
                         <div class="modal-content">
                           <div class="modal-header">
-                            <h5 class="modal-title" id="staticBackdropLabel">
-                              Modal title
+                            <h5 class="modal-title" id="exampleModalLabel9">
+                              <strong>Fire Size</strong>
                             </h5>
                             <button
                               type="button"
@@ -710,7 +843,14 @@
                               aria-label="Close"
                             ></button>
                           </div>
-                          <div class="modal-body">...</div>
+                          <div class="modal-body">
+                            <p>
+                              The size of the fire at the time of sprinkler
+                              activation. This value is particularly helpful to
+                              estimate the maximum firesize in a compartment
+                              before the sprinkler activates.
+                            </p>
+                          </div>
                           <div class="modal-footer">
                             <button
                               type="button"
@@ -718,9 +858,6 @@
                               data-bs-dismiss="modal"
                             >
                               Close
-                            </button>
-                            <button type="button" class="btn btn-primary">
-                              Understood
                             </button>
                           </div>
                         </div>
@@ -735,35 +872,8 @@
 
           <!-- Results -->
           <div class="col">
+            <!-- end accordion -->
             <div class="accordion pt-4" id="accordionExample">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingOne">
-                  <button
-                    class="accordion-button"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#collapseOne"
-                    aria-expanded="true"
-                    aria-controls="collapseOne"
-                  >
-                    Governing Equations
-                  </button>
-                </h2>
-                <div
-                  id="collapseOne"
-                  class="accordion-collapse collapse show"
-                  aria-labelledby="headingOne"
-                  data-bs-parent="#accordionExample"
-                >
-                  <div class="accordion-body">
-                    <img
-                      class="img-fluid"
-                      src="img/equations.png"
-                      alt="equations"
-                    />
-                  </div>
-                </div>
-              </div>
               <div class="accordion-item">
                 <h2 class="accordion-header" id="headingTwo">
                   <button
@@ -774,7 +884,7 @@
                     aria-expanded="false"
                     aria-controls="collapseTwo"
                   >
-                    Accordion Item #2
+                    <strong>Schematic of a Ceiling Jet Flow</strong>
                   </button>
                 </h2>
                 <div
@@ -784,11 +894,55 @@
                   data-bs-parent="#accordionExample"
                 >
                   <div class="accordion-body">
-                    <code>.accordion-body</code>, though the transition does
-                    limit overflow.
+                    <div class="d-flex justify-content-center">
+                      Figure adopted from Dr Ronald L. Alpert’s presentation
+                      given on FIRESEAT 2011, Edinburgh, UK.
+                    </div>
+                    <div class="d-flex justify-content-center">
+                      <img
+                        class="img-fluid"
+                        src="img/Ceiling-jet.jpg"
+                        alt="equations"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                  <button
+                    class="accordion-button"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne"
+                    aria-expanded="true"
+                    aria-controls="collapseOne"
+                  >
+                    <strong>Governing Equations</strong>
+                  </button>
+                </h2>
+                <div
+                  id="collapseOne"
+                  class="accordion-collapse collapse show"
+                  aria-labelledby="headingOne"
+                  data-bs-parent="#accordionExample"
+                >
+                  <div class="accordion-body">
+                    <div class="d-flex justify-content-center">
+                      The correlations for jet temperatures and velocities were
+                      developed from data by R. L. Alpert
+                    </div>
+                    <div class="d-flex justify-content-center">
+                      <img
+                        class="img-fluid"
+                        src="img/Formulas.png"
+                        alt="equations"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
               <div class="accordion-item">
                 <h2 class="accordion-header" id="headingThree">
                   <button
@@ -799,7 +953,7 @@
                     aria-expanded="false"
                     aria-controls="collapseThree"
                   >
-                    Accordion Item #3
+                    <strong>Visual Representation</strong>
                   </button>
                 </h2>
                 <div
@@ -809,16 +963,43 @@
                   data-bs-parent="#accordionExample"
                 >
                   <div class="accordion-body">
-                    <strong>This is the third item's accordion body.</strong>
+                    <div class="d-flex justify-content-center">
+                      <img
+                        class="img-fluid"
+                        src="img/Ceiling-Sprinkler.gif"
+                        alt="equations"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFour">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseFour"
+                    aria-expanded="false"
+                    aria-controls="collapseFour"
+                  >
+                    <strong>Graphical Data</strong>
+                  </button>
+                </h2>
+                <div
+                  id="collapseFour"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="headingFour"
+                  data-bs-parent="#accordionExample"
+                >
+                  <div class="accordion-body">
+                    <strong>There will graph photo.</strong>
                   </div>
                 </div>
               </div>
             </div>
-
-            <p class="text-light fst-italic py-3">
-              The correlations for jet temperatures and velocities were
-              developed from data by Alpert
-            </p>
+            <!-- end accordion -->
           </div>
         </div>
         <div class="row py-2 pt-4">
@@ -993,11 +1174,9 @@
         }
         //Print Results
         console.log("Activation Time : ", TactivationTimePrint);
-        $("#activationTimeResult").html(
-          TactivationTimePrint.toFixed(0) + " seconds"
-        );
+        $("#activationTimeResult").html(TactivationTimePrint.toFixed(0));
         console.log("Fire Size : ", FireSizeOfQ.toFixed(0));
-        $("#fireSizeResult").html(FireSizeOfQ.toFixed(0) + " KW");
+        $("#fireSizeResult").html(FireSizeOfQ.toFixed(0));
       });
 
       // handle data button click
