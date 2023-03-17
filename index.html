@@ -28,7 +28,7 @@
     <title>Sprinkler Project</title>
   </head>
   <body>
-    <div class="container">
+    <div class="container-sm">
       <form action="" class="form-detection">
         <div class="row text-light">
           <div class="col">
@@ -994,7 +994,17 @@
                   data-bs-parent="#accordionExample"
                 >
                   <div class="accordion-body">
-                    <strong>There will graph photo.</strong>
+                    <strong
+                      >There will graph photo.
+                      <code>
+                        <ul>
+                          <li>QvsTime</li>
+                          <li>VgasvsTime</li>
+                          <li>TgasvsTime</li>
+                          <li>QvsTgas</li>
+                        </ul></code
+                      >
+                    </strong>
                   </div>
                 </div>
               </div>
@@ -1004,27 +1014,32 @@
         </div>
         <div class="row py-2 pt-4">
           <div class="col">
-            <button class="btn btn-calculate" type="submit">Calculate</button>
+            <button class="btn btn-calculate btn-lg" type="submit">
+              Calculate
+            </button>
           </div>
           <div class="col">
-            <button class="btn btn-clear" type="button">Clear Data</button>
+            <button class="btn btn-clear btn-lg" type="button">
+              Clear Data
+            </button>
           </div>
           <div class="col">
-            <button class="btn btn-info" type="button" id="download" data="">
+            <button
+              class="btn btn-clear btn-lg"
+              type="button"
+              id="download"
+              data=""
+            >
               Download
             </button>
           </div>
           <div class="col">
-            <button class="btn btn-print" type="button">Print Results</button>
+            <button class="btn btn-print btn-lg" type="button">
+              Print Results
+            </button>
           </div>
         </div>
       </form>
-    </div>
-
-    <div class="activation-plot py-5">
-      <div class="container-lg">
-        <!-- <svg class="line-chart" style="max-height: 675px"></svg> -->
-      </div>
     </div>
   </body>
 
