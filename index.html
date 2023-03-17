@@ -22,7 +22,7 @@
     ></script>
 
     <!-- Load chart js into the DOM -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.xkcd@1.1/dist/chart.xkcd.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-2.18.2.min.js"></script>
 
     <link rel="stylesheet" href="style.css" />
     <title>Sprinkler Project</title>
@@ -996,14 +996,41 @@
                   <div class="accordion-body">
                     <strong
                       >There will graph photo.
-                      <code>
-                        <ul>
-                          <li>QvsTime</li>
-                          <li>VgasvsTime</li>
-                          <li>TgasvsTime</li>
-                          <li>QvsTgas</li>
-                        </ul></code
-                      >
+
+                      <ul>
+                        <li>
+                          <div
+                            class="line-chart"
+                            id="myDiv"
+                            style="width: 100%; max-width: 600px"
+                          ></div>
+                          <p class="text-center text-danger">QvsT</p>
+                        </li>
+                        <li>
+                          <div
+                            class="line-chart"
+                            id="myDiv2"
+                            style="width: 100%; max-width: 600px"
+                          ></div>
+                          <p class="text-center text-danger">VgasvsTime</p>
+                        </li>
+                        <li>
+                          <div
+                            class="line-chart"
+                            id="myDiv3"
+                            style="width: 100%; max-width: 600px"
+                          ></div>
+                          <p class="text-center text-danger">TgasvsTime</p>
+                        </li>
+                        <li>
+                          <div
+                            class="line-chart"
+                            id="myDiv4"
+                            style="width: 100%; max-width: 600px"
+                          ></div>
+                          <p class="text-center text-danger">QvsTgas</p>
+                        </li>
+                      </ul>
                     </strong>
                   </div>
                 </div>
@@ -1070,7 +1097,7 @@
       var arr6 = [];
 
       var Vgas, Tgas, Q, tau, deltaT;
-      var csv = "time,Q, Vgas, Tgas, Tbulb, deltaT\n";
+      var csv = "time,Q,Vgas,Tgas,Tbulb,deltaT\n";
 
       $(".btn-clear").click(function () {
         $("form")[0].reset();
@@ -1098,11 +1125,6 @@
           return Number(num + "e" + -decimalPlaces);
         }
 
-        // function addConcurent(num1, num2, num3, num4) {
-        //   num4 = num1 + num2 + num3;
-        //   return num4;
-        // }
-
         // loop of result
         for (var i = 1; i <= duration; i++) {
           var preQ = alphaVal * parseFloat(i * i);
@@ -1128,30 +1150,12 @@
           deltaT = (1 / round(tau, 2)) * (Tgas - Ambient);
           Tbulb = Ambient + (Tgas - Tbulb) + deltaT;
           // var Tbulb = addConcurent(Ambient, round(deltaT, 2), Tbulb);
-          console.log(Tbulb);
           TbulbCounter = Tbulb + parseFloat(round(deltaT, 2));
           if (TbulbCounter >= Activation) {
             TactivationTimePrint = i;
             FireSizeOfQ = preQ;
             break;
           }
-          console.log(
-            "time,TbulbCounter Q, Vgas, Tgas, delta, tau",
-            "\n",
-            +i +
-              ", " +
-              round(TbulbCounter, 2) +
-              ", " +
-              round(Q, 2) +
-              " , " +
-              round(Vgas, 2) +
-              " , " +
-              round(Tgas, 2) +
-              " , " +
-              round(deltaT, 3) +
-              " , " +
-              1 / tau
-          );
 
           arr1.push(i);
           arr2.push(Q);
@@ -1181,11 +1185,47 @@
             arr6[i] +
             "\n";
         }
+        //Print Graph ChartJS
+        // i,Q,Vgas,Tgas,TbulbCounter,deltaT
+        $("#headingFour").click(function (event) {
+          $("#myDiv").empty();
+          $("#myDiv2").empty();
+          $("#myDiv3").empty();
+          $("#myDiv4").empty();
+          var trace1 = {
+            x: arr2,
+            y: arr1,
+            mode: "lines",
+          };
+          var trace2 = {
+            x: arr3,
+            y: arr1,
+            mode: "lines",
+          };
+          var trace3 = {
+            x: arr4,
+            y: arr1,
+            mode: "lines",
+          };
+          var trace4 = {
+            x: arr4,
+            y: arr2,
+            mode: "lines",
+          };
+          var data = [trace1];
+          var data2 = [trace2];
+          var data3 = [trace3];
+          var data4 = [trace4];
+          Plotly.newPlot("myDiv", data);
+          Plotly.newPlot("myDiv2", data2);
+          Plotly.newPlot("myDiv3", data3);
+          Plotly.newPlot("myDiv4", data4);
+        });
         //Print Results
         console.log("Activation Time : ", TactivationTimePrint);
-        $("#activationTimeResult").html(TactivationTimePrint.toFixed(0));
+        $("#activationTimeResult").html(TactivationTimePrint.toFixed(0) + " s");
         console.log("Fire Size : ", FireSizeOfQ.toFixed(0));
-        $("#fireSizeResult").html(FireSizeOfQ.toFixed(0));
+        $("#fireSizeResult").html(FireSizeOfQ.toFixed(0) + " kW");
       });
 
       // handle data button click
