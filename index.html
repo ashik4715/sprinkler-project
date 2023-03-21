@@ -22,7 +22,7 @@
     ></script>
 
     <!-- Load chart js into the DOM -->
-    <script src="https://cdn.plot.ly/plotly-2.18.2.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
     <link rel="stylesheet" href="style.css" />
     <title>Sprinkler Project</title>
@@ -1025,10 +1025,10 @@
             </button>
           </div>
           <div class="d-grid gap-2 col mx-auto" style="width: 250px">
-            <button class="btn btn-calculate btn-lg" id="download" data="">
+            <button class="btn btn-print btn-lg" id="download" data="">
               Download CSV
             </button>
-            <button class="btn btn-calculate btn-lg">Print Results</button>
+            <button class="btn btn-download btn-lg">Print Results</button>
           </div>
         </div>
       </form>
@@ -1075,6 +1075,7 @@
       });
       $(".btn-calculate").click(function () {
         $("#myDiv3").empty();
+        $(".line-chart").empty();
       });
       $("form").submit(function (event) {
         event.preventDefault(); // prevent default form submission
@@ -1093,6 +1094,7 @@
         var TbulbCounter = 0;
         let TactivationTimePrint = 0;
         let FireSizeOfQ = 0;
+        let PrintTgas = 0;
 
         function round(num, decimalPlaces = 0) {
           num = Math.round(num + "e" + decimalPlaces);
@@ -1128,6 +1130,7 @@
           if (TbulbCounter >= Activation) {
             TactivationTimePrint = i;
             FireSizeOfQ = preQ;
+            PrintTgas = Tgas;
             break;
           }
           timeStep = round(parseFloat(timeStep) + 0.1, 2);
@@ -1188,35 +1191,35 @@
         //Print Graph ChartJS
         // i,Q,Vgas,Tgas,TbulbCounter,deltaT
         $("#headingFour").click(function (event) {
+          $("#myDiv3").empty();
+
           var trace1 = {
-            x: arr1,
-            y: arr2,
-            mode: "lines",
+            x: [TactivationTimePrint.toFixed(0)],
+            y: [PrintTgas.toFixed(2)],
+            mode: "markers",
+            marker: {
+              size: 15,
+              color: "red",
+            },
           };
-          var trace2 = {
-            x: arr1,
-            y: arr3,
-            mode: "lines",
-          };
+
           var trace3 = {
             x: arr1,
             y: arr4,
-            mode: "lines",
+            mode: "lines+markers",
+            marker: {
+              color: "teal",
+            },
           };
-          var trace4 = {
-            x: arr4,
-            y: arr2,
-            mode: "lines",
+
+          var data = [trace3, trace1];
+
+          var layout = {
+            title: "A Line Chart of Tgas Vs Activation Time",
+            showlegend: false,
           };
-          var data = [trace1];
-          var data2 = [trace2];
-          var data3 = [trace3];
-          var data4 = [trace4];
-          var layout = { showlegend: true };
-          // Plotly.newPlot("myDiv", data);
-          // Plotly.newPlot("myDiv2", data2);
-          Plotly.newPlot("myDiv3", data3);
-          // Plotly.newPlot("myDiv4", data4);
+
+          Plotly.newPlot("myDiv3", data, layout);
         });
         //Print Results
         console.log("Activation Time : ", TactivationTimePrint);

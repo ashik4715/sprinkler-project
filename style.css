@@ -87,7 +87,9 @@ body {
   --bs-btn-disabled-bg: #a4a4a6;
   --bs-btn-disabled-border-color: #a4a4a6;
 }
-.btn-clear {
+.btn-clear,
+.btn-print,
+.btn-download {
   --bs-btn-color: white;
   --bs-btn-bg: #a4a4a6;
   --bs-btn-border-color: #a4a4a6;
