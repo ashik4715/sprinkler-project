@@ -999,37 +999,11 @@
                       <div class="col">
                         <div
                           class="line-chart"
-                          id="myDiv"
-                          style="width: 100%; max-width: 600px"
-                        ></div>
-                        <p class="text-center text-danger">Q vs T</p>
-
-                        <div
-                          class="line-chart"
-                          id="myDiv2"
-                          style="width: 100%; max-width: 600px"
-                        ></div>
-                        <p class="text-center text-danger">
-                          V<sub>gas</sub> vs Time
-                        </p>
-                      </div>
-                      <div class="col">
-                        <div
-                          class="line-chart"
                           id="myDiv3"
                           style="width: 100%; max-width: 600px"
                         ></div>
                         <p class="text-center text-danger">
                           T<sub>gas</sub> vs Time
-                        </p>
-
-                        <div
-                          class="line-chart"
-                          id="myDiv4"
-                          style="width: 100%; max-width: 600px"
-                        ></div>
-                        <p class="text-center text-danger">
-                          Q vs T<sub>gas</sub>
                         </p>
                       </div>
                     </div>
@@ -1046,18 +1020,13 @@
             <button class="btn btn-calculate btn-lg" type="submit">
               Calculate
             </button>
-            <button class="btn btn-calculate btn-lg" type="button">
+            <button class="btn btn-clear btn-lg" type="button">
               Clear Data
             </button>
           </div>
           <div class="d-grid gap-2 col mx-auto" style="width: 250px">
-            <button
-              class="btn btn-calculate btn-lg"
-              type="button"
-              id="download"
-              data=""
-            >
-              Download
+            <button class="btn btn-calculate btn-lg" id="download" data="">
+              Download CSV
             </button>
             <button class="btn btn-calculate btn-lg">Print Results</button>
           </div>
@@ -1103,6 +1072,9 @@
 
       $(".btn-clear").click(function () {
         $("form")[0].reset();
+      });
+      $(".btn-calculate").click(function () {
+        $("#myDiv3").empty();
       });
       $("form").submit(function (event) {
         event.preventDefault(); // prevent default form submission
@@ -1158,15 +1130,41 @@
             FireSizeOfQ = preQ;
             break;
           }
+          timeStep = round(parseFloat(timeStep) + 0.1, 2);
+        }
 
+        for (var i = 1; i <= duration; i++) {
+          var preQ = alphaVal * parseFloat(i * i);
+          Q = preQ;
+          if (parseFloat(R / H) > parseFloat(0.15)) {
+            Vgas =
+              (0.2 * Math.pow(Q, 1 / 3) * Math.pow(H, 1 / 2)) /
+              Math.pow(R, 5 / 6);
+          }
+          if (parseFloat(R / H) <= parseFloat(0.15)) {
+            Vgas = 0.95 * Math.pow(Q / H, 1 / 3);
+          }
+          if (parseFloat(R / H) > parseFloat(0.18)) {
+            var preTgas = (5.38 / H) * Math.pow(Q / R, 2 / 3);
+            Tgas = preTgas + Ambient;
+          }
+          if (parseFloat(R / H) <= parseFloat(0.18)) {
+            var preTgas = Math.pow(Q, 2 / 3) / Math.pow(H, 5 / 3);
+            Tgas = Ambient + 16.9 * preTgas;
+          }
+
+          tau = rti / Math.sqrt(Vgas);
+          deltaT = (1 / round(tau, 2)) * (Tgas - Ambient);
+          Tbulb = Ambient + (Tgas - Tbulb) + deltaT;
+
+          TbulbCounter = Tbulb + parseFloat(round(deltaT, 2));
+          timeStep = round(parseFloat(timeStep) + 0.1, 2);
           arr1.push(i);
           arr2.push(Q);
           arr3.push(Vgas.toFixed(2));
           arr4.push(Tgas.toFixed(2));
           arr5.push(TbulbCounter.toFixed(2));
           arr6.push(deltaT.toFixed(2));
-
-          timeStep = round(parseFloat(timeStep) + 0.1, 2);
         }
 
         // export the arrays to CSV
@@ -1190,23 +1188,19 @@
         //Print Graph ChartJS
         // i,Q,Vgas,Tgas,TbulbCounter,deltaT
         $("#headingFour").click(function (event) {
-          $("#myDiv").empty();
-          $("#myDiv2").empty();
-          $("#myDiv3").empty();
-          $("#myDiv4").empty();
           var trace1 = {
-            x: arr2,
-            y: arr1,
+            x: arr1,
+            y: arr2,
             mode: "lines",
           };
           var trace2 = {
-            x: arr3,
-            y: arr1,
+            x: arr1,
+            y: arr3,
             mode: "lines",
           };
           var trace3 = {
-            x: arr4,
-            y: arr1,
+            x: arr1,
+            y: arr4,
             mode: "lines",
           };
           var trace4 = {
@@ -1218,10 +1212,11 @@
           var data2 = [trace2];
           var data3 = [trace3];
           var data4 = [trace4];
-          Plotly.newPlot("myDiv", data);
-          Plotly.newPlot("myDiv2", data2);
+          var layout = { showlegend: true };
+          // Plotly.newPlot("myDiv", data);
+          // Plotly.newPlot("myDiv2", data2);
           Plotly.newPlot("myDiv3", data3);
-          Plotly.newPlot("myDiv4", data4);
+          // Plotly.newPlot("myDiv4", data4);
         });
         //Print Results
         console.log("Activation Time : ", TactivationTimePrint);
